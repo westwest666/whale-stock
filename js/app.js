@@ -328,6 +328,23 @@
         '\n这是后端采集/计算完成的时刻，不是逐笔实时行情。';
     }
 
+    /* 档位徽标（tech_conviction.profile_label），无该字段则不显示 */
+    var tc = obj(p.tech_conviction);
+    var profileItem = byId('st-profile-item');
+    var profileBadge = byId('st-profile');
+    if (profileItem && profileBadge) {
+      if (tc.profile_label) {
+        profileBadge.textContent = tc.profile_label;
+        profileBadge.className = 'badge badge-profile' +
+          (/aggressive|激进/.test(String(tc.profile || '') + String(tc.profile_label || '')) ? ' is-aggressive' : '');
+        profileBadge.title = '系统当前档位：' + (tc.profile || '—') +
+          (tc.horizon ? '（目标周期 ' + tc.horizon + '）' : '');
+        profileItem.hidden = false;
+      } else {
+        profileItem.hidden = true;
+      }
+    }
+
     var sInfo = sessionInfo(meta);
     if (mode) {
       mode.textContent = sInfo.label;
@@ -391,20 +408,40 @@
     return m2 ? m2[1] + ':00' : '—';
   }
 
-  /** 由 session / mode 推导「盘前 / 盘中 / 盘后」 */
+  /** 由数据生成时间推导「盘前 / 盘中 / 盘后」（优先用时间，避免 stale session/mode 误导）
+   *  交易时段：09:15~09:30 集合竞价、09:30~11:30 / 13:00~15:00 连续竞价、11:30~13:00 午休；
+   *  若 trade_date 不是今天（看的是历史数据），退回 mode/session 判断并标记为非盘中。 */
   function sessionInfo(meta) {
-    var session = String(meta.session || '').toLowerCase();
-    var mode = String(meta.mode || '').toLowerCase();
     var label = '—', open = false, intraday = false;
-    if (session === 'open') { label = '盘中'; open = true; intraday = true; }
-    else if (session === 'auction') { label = '盘前'; open = true; intraday = true; }
-    else if (session === 'lunch') { label = '盘中'; open = true; intraday = true; }
-    else if (session === 'pre_open') { label = '盘前'; intraday = false; }
-    else if (session === 'closed' || session === 'close') { label = '盘后'; intraday = false; }
-    else if (mode === 'snapshot' || mode === 'intraday') { label = '盘中'; open = true; intraday = true; }
-    else if (mode === 'morning') { label = '盘前'; }
+    var gen = String(meta.generated_at || '');
+    var m = gen.match(/[T ](\d{2}):(\d{2})/);
+    var sameDay = false;
+    try {
+      var d = new Date();
+      var pad = function (x) { return (x < 10 ? '0' : '') + x; };
+      sameDay = String(meta.trade_date || '') === (d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()));
+    } catch (e) { sameDay = false; }
+
+    if (m && sameDay) {
+      var mins = parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+      if (mins < 9 * 60 + 15) { label = '盘前'; }
+      else if (mins < 9 * 60 + 30) { label = '盘前'; open = true; intraday = true; }
+      else if (mins <= 11 * 60 + 30) { label = '盘中'; open = true; intraday = true; }
+      else if (mins < 13 * 60) { label = '盘中'; open = true; intraday = true; }
+      else if (mins <= 15 * 60) { label = '盘中'; open = true; intraday = true; }
+      else { label = '盘后'; }
+      return { label: label, open: open, intraday: intraday };
+    }
+
+    /* 非当日数据（或缺少生成时间）：按 mode 为主、session 兜底 */
+    var mode = String(meta.mode || '').toLowerCase();
+    var session = String(meta.session || '').toLowerCase();
+    if (mode === 'morning') { label = '盘前'; }
     else if (mode === 'evening') { label = '盘后'; }
-    if (label === '盘前' && mode === 'snapshot') { label = '盘中'; open = true; intraday = true; }
+    else if (mode === 'snapshot' || mode === 'intraday') { label = '盘中'; open = true; intraday = true; }
+    else if (session === 'open' || session === 'auction' || session === 'lunch') { label = '盘中'; open = true; intraday = true; }
+    else if (session === 'pre_open') { label = '盘前'; }
+    else if (session === 'closed' || session === 'close') { label = '盘后'; }
     return { label: label, open: open, intraday: intraday };
   }
 
@@ -3114,8 +3151,12 @@
     sec.hidden = false;
 
     var capital = n(pf.capital);
-    var core = arr(pf.core).filter(function (x) { return x && typeof x === 'object'; });
-    var satellite = arr(pf.satellite).filter(function (x) { return x && typeof x === 'object'; });
+    var validHolding = function (x) {
+      x = obj(x);
+      return numOr(x.weight, 0) > 0.0001 || numOr(x.amount, 0) > 0.0001 || numOr(x.shares, 0) > 0;
+    };
+    var core = arr(pf.core).filter(function (x) { return x && typeof x === 'object' && validHolding(x); });
+    var satellite = arr(pf.satellite).filter(function (x) { return x && typeof x === 'object' && validHolding(x); });
     var tactical = obj(pf.tactical);
     var cash = obj(pf.cash);
     var notReady = !core.length && !satellite.length;
@@ -3249,6 +3290,206 @@
       '<td class="num">' + (n(x.shares) == null ? '—' : fmtInt(x.shares)) + '</td>' +
       '<td class="muted" style="white-space:normal;min-width:160px">' + esc(x.why || '') + '</td>' +
     '</tr>';
+  }
+
+  /* =====================================================================
+   * 3.14b 中国科技长线（tech_conviction，激进档执行方案）
+   * ===================================================================== */
+  function techLabelClass(label) {
+    var s = String(label || '');
+    if (/强烈看好|强烈/.test(s)) return 'lv-strong';
+    if (/看好/.test(s)) return 'lv-good';
+    if (/中性/.test(s)) return 'lv-neutral';
+    return 'lv-cautious';
+  }
+
+  function renderTechConviction(p) {
+    var sec = byId('sec-tech');
+    if (!sec) return;
+    var tc = obj(obj(p).tech_conviction);
+    if (!Object.keys(tc).length) { sec.hidden = true; return; }
+    sec.hidden = false;
+
+    var score = n(tc.thesis_score);
+    var label = String(tc.label || '');
+    var lvCls = techLabelClass(label);
+    var satellite = n(tc.satellite_amount);
+
+    /* meta */
+    var metaEl = byId('tech-meta');
+    if (metaEl) {
+      var bits = [];
+      if (tc.profile_label) bits.push('档位：' + tc.profile_label);
+      if (tc.horizon) bits.push('持有周期 ' + tc.horizon);
+      if (satellite != null) bits.push('卫星仓总额 ' + fmtYuan(satellite));
+      metaEl.textContent = bits.join(' · ') || '—';
+    }
+
+    /* 证据分仪表盘 */
+    var scoreEl = byId('tech-score');
+    if (scoreEl) scoreEl.textContent = score == null ? '—' : score.toFixed(0);
+    var labelEl = byId('tech-label');
+    if (labelEl) {
+      labelEl.textContent = label || '—';
+      labelEl.className = 'tech-label ' + lvCls;
+    }
+    var horizonEl = byId('tech-horizon');
+    if (horizonEl) horizonEl.textContent = tc.horizon ? ('持有周期 ' + tc.horizon) : '';
+
+    if (score == null) {
+      chartEmpty('thesis-chart', '证据分缺失');
+    } else {
+      var inst = initChart('thesis-chart');
+      if (inst) {
+        var gColor = score >= 75 ? C.gold : (score >= 60 ? C.cyan : (score >= 45 ? '#93a8bd' : C.down));
+        inst.setOption({
+          animationDuration: 700,
+          series: [{
+            type: 'gauge', startAngle: 220, endAngle: -40, min: 0, max: 100,
+            radius: '100%', center: ['50%', '58%'],
+            progress: { show: true, width: 9, roundCap: true, itemStyle: { color: gColor } },
+            axisLine: { lineStyle: { width: 9, color: [[1, 'rgba(255,255,255,0.07)']] } },
+            pointer: { show: false }, axisTick: { show: false }, splitLine: { show: false },
+            axisLabel: { show: false }, anchor: { show: false },
+            title: { offsetCenter: [0, '6%'], color: C.muted, fontSize: 11, fontFamily: FONT },
+            detail: { show: false },
+            data: [{ value: clamp(score, 0, 100), name: '证据分' }]
+          }]
+        }, true);
+      }
+    }
+
+    var oneEl = byId('tech-one-line');
+    if (oneEl) oneEl.textContent = tc.one_line || '—';
+
+    /* 5 个证据维度 */
+    var reasonsEl = byId('tech-reasons');
+    var reasons = arr(tc.reasons).filter(function (x) { return x && typeof x === 'object'; });
+    if (reasonsEl) {
+      reasonsEl.innerHTML = reasons.length ? reasons.map(function (r) {
+        r = obj(r);
+        var sc = n(r.score);
+        var w = sc == null ? 0 : clamp(sc, 0, 100);
+        var fillCls = sc == null ? 'low' : (sc >= 75 ? 'high' : (sc >= 55 ? 'mid' : 'low'));
+        return '<div class="reason-row">' +
+          '<span class="reason-name">' + esc(r.name || '—') + '</span>' +
+          '<span class="reason-bar-wrap">' +
+            '<span class="reason-track"><i class="reason-fill ' + fillCls + '" style="width:' + w.toFixed(1) + '%"></i></span>' +
+            '<span class="reason-text" title="' + esc(r.text || '') + '">' + esc(r.text || '') + '</span>' +
+          '</span>' +
+          '<span class="reason-score">' + (sc == null ? '—' : sc.toFixed(0)) + '</span>' +
+        '</div>';
+      }).join('') : emptyState('证据维度缺失');
+    }
+
+    /* 关键指标 */
+    var metrics = obj(tc.metrics);
+    var mEl = byId('tech-metrics');
+    if (mEl) {
+      var items = [];
+      function pushMetric(k, v, cls, unit) {
+        if (v == null) return;
+        items.push({ k: k, v: v, cls: cls || '', unit: unit || '' });
+      }
+      pushMetric('ETF 现价', n(metrics.etf_price) == null ? null : fmtPrice(metrics.etf_price));
+      pushMetric('MA20', n(metrics.etf_ma20) == null ? null : fmtPrice(metrics.etf_ma20));
+      pushMetric('RSI', n(metrics.etf_rsi) == null ? null : n(metrics.etf_rsi).toFixed(1));
+      pushMetric('场内溢价', n(metrics.etf_premium) == null ? null : fmtPct(metrics.etf_premium),
+        n(metrics.etf_premium) != null && n(metrics.etf_premium) > 1.5 ? 'is-warn' : '');
+      pushMetric('20 日波动', n(metrics.etf_vol20) == null ? null : fmtPct(metrics.etf_vol20, 1, false));
+      pushMetric('行业净利同比', n(metrics.sector_earn_yoy) == null ? null : fmtPct(metrics.sector_earn_yoy), dirClass(metrics.sector_earn_yoy));
+      pushMetric('行业 PE 分位', n(metrics.sector_pe_pct) == null ? null : fmtPct(metrics.sector_pe_pct, 1, false));
+      pushMetric('距 500 日高点', n(metrics.sector_dd500) == null ? null : fmtPct(metrics.sector_dd500), 'bt-dd');
+      pushMetric('价格分位', n(metrics.sector_price_pct) == null ? null : fmtPct(metrics.sector_price_pct, 0, false));
+      mEl.innerHTML = items.length ? items.map(function (it) {
+        return '<div class="tech-metric"><span class="k">' + esc(it.k) + '</span>' +
+          '<span class="v ' + it.cls + '">' + it.v + '</span></div>';
+      }).join('') : emptyState('关键指标缺失');
+    }
+
+    /* 分批建仓计划 */
+    var plan = arr(tc.plan).filter(function (x) { return x && typeof x === 'object'; });
+    var planMeta = byId('tech-plan-meta');
+    if (planMeta) {
+      planMeta.textContent = (satellite == null ? '卫星仓' : '卫星仓总额 ' + fmtYuan(satellite)) +
+        ' · ' + plan.length + ' 批执行' + (plan.length ? ' · 第 1 批「现在」' : '');
+    }
+    var tbody = byId('tech-plan-tbody');
+    if (tbody) {
+      if (!plan.length) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-state">建仓计划缺失</td></tr>';
+      } else {
+        var sorted = plan.slice().sort(function (a, b) {
+          return numOr(obj(a).tranche, 0) - numOr(obj(b).tranche, 0);
+        });
+        tbody.innerHTML = sorted.map(function (t) {
+          t = obj(t);
+          var idx = numOr(t.tranche, 0);
+          var isNow = idx === 1 || /现在/.test(String(t.when || ''));
+          var share = pct01(t.share);
+          var price = n(t.price_ref);
+          var amountPlanned = n(t.amount);
+          var amountActual = n(t.actual_amount);
+          var shares = n(t.shares);
+          return '<tr' + (isNow ? ' class="is-now"' : '') + '>' +
+            '<td><span class="tech-plan-when"><span class="tranche-badge' + (idx === 1 ? ' t1' : '') + '">' + (idx || '·') + '</span> ' +
+              esc(t.when || '—') + (isNow ? '<span class="now-badge">现在</span>' : '') + '</span></td>' +
+            '<td class="num">' + (share == null ? '—' : share.toFixed(0) + '%') + '</td>' +
+            '<td class="muted" style="white-space:normal;min-width:220px;max-width:340px">' + esc(t.trigger || '—') + '</td>' +
+            '<td class="num">' + (price == null ? '—' : fmtPrice(price)) + '</td>' +
+            '<td class="num"><span class="tech-plan-amount">' +
+              '<span class="main">' + (amountActual == null ? fmtYuan(amountPlanned) : fmtYuan(amountActual)) + '</span>' +
+              (amountPlanned == null || amountActual == null ? '' :
+                '<span class="sub">计划 ' + fmtYuan(amountPlanned) + '</span>') +
+            '</span></td>' +
+            '<td class="num">' + (shares == null ? '—' : fmtInt(shares) + ' 份') + '</td>' +
+            '<td class="muted" style="white-space:normal;min-width:200px;max-width:300px">' + esc(t.note || '') + '</td>' +
+          '</tr>';
+        }).join('');
+      }
+    }
+
+    /* 失效条件 */
+    var invEl = byId('tech-invalidators');
+    var inv = arr(tc.invalidators);
+    if (invEl) {
+      invEl.innerHTML = inv.length ? inv.map(function (x) {
+        return '<li>' + esc(typeof x === 'string' ? x : (obj(x).text || JSON.stringify(x))) + '</li>';
+      }).join('') : '<li class="empty-state">失效条件缺失</li>';
+    }
+
+    /* 风险预算 */
+    var risk = obj(tc.risk_controls);
+    var riskEl = byId('tech-risk');
+    if (riskEl) {
+      var dd = n(risk.worst_drawdown_pct);
+      var loss = n(risk.worst_loss_yuan);
+      var single = n(risk.max_single_etf_pct);
+      var rules = [];
+      if (risk.stop_rule) rules.push({ k: '止损', v: risk.stop_rule });
+      if (risk.premium_rule) rules.push({ k: '溢价', v: risk.premium_rule });
+      if (risk.review_rule) rules.push({ k: '复盘', v: risk.review_rule });
+      if (single != null) rules.push({ k: '上限', v: '单只 ETF 最高占卫星仓 ' + single.toFixed(0) + '%' });
+      riskEl.innerHTML =
+        '<div class="tech-risk-nums">' +
+          '<div class="tech-risk-num"><div class="k">最坏情况 · 卫星仓最大回撤</div>' +
+            '<div class="v">-' + (dd == null ? '—' : dd.toFixed(0)) + '<small>%</small></div></div>' +
+          '<div class="tech-risk-num"><div class="k">最坏情况 · 亏损金额</div>' +
+            '<div class="v">' + (loss == null ? '—' : fmtYuan(loss).replace(' 元', '')) + '<small> 元</small></div></div>' +
+        '</div>' +
+        (rules.length ? '<ul class="tech-risk-rules">' + rules.map(function (r) {
+          return '<li><span class="k">' + esc(r.k) + '：</span>' + esc(r.v) + '</li>';
+        }).join('') + '</ul>' : '');
+    }
+
+    var sumEl = byId('tech-summary');
+    if (sumEl) sumEl.textContent = tc.summary || '';
+    var discEl = byId('tech-disclaimer');
+    if (discEl) {
+      discEl.textContent = '这是仓位执行方案，不是收益承诺；激进档意味着更大回撤容忍度' +
+        (n(risk.worst_drawdown_pct) == null ? '' : '（最坏情况：卫星仓约 -' + n(risk.worst_drawdown_pct).toFixed(0) + '% / ≈' +
+          (n(risk.worst_loss_yuan) == null ? '—' : fmtYuan(risk.worst_loss_yuan)) + '）') + '。';
+    }
   }
 
   /* =====================================================================
@@ -3650,6 +3891,7 @@
     { name: 'seed', fn: 'renderSeed', fallback: 'seed-tbody' },
     { name: 'shortterm', fn: 'renderShortTerm', fallback: 'short-cantrade' },
     { name: 'portfolio', fn: 'renderPortfolio', fallback: 'portfolio-tbody' },
+    { name: 'tech', fn: 'renderTechConviction', fallback: 'tech-one-line' },
     { name: 'market', fn: 'renderMarket', fallback: 'index-grid' },
     { name: 'verdict', fn: 'renderVerdict', fallback: 'verdict-body' },
     { name: 'national', fn: 'renderNational', fallback: 'national-signals' },
@@ -3668,7 +3910,8 @@
     renderYaogu: renderYaogu, renderBacktest: renderBacktest, renderAction: renderAction,
     renderHistory: renderHistory, renderOutlook: renderOutlook, renderGlobal: renderGlobal,
     renderSeed: renderSeed, renderShortTerm: renderShortTerm, renderPortfolio: renderPortfolio,
-    renderReview: renderReview, renderIndustrySpace: renderIndustrySpace
+    renderReview: renderReview, renderIndustrySpace: renderIndustrySpace,
+    renderTechConviction: renderTechConviction
   };
 
   function renderAll() {
