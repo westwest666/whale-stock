@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-05T18:43:16+08:00",
+  "generated_at": "2026-11-05T18:53:55+08:00",
   "trade_date": "2026-11-05",
   "mode": "evening",
   "session": "lunch",
@@ -28,31 +28,31 @@
      "module": "etf_view.analyze_etf",
      "ok": true,
      "error": null,
-     "ms": 79
+     "ms": 80
     },
     {
      "module": "yaogu.analyze_yaogu",
      "ok": true,
      "error": null,
-     "ms": 32
+     "ms": 36
     },
     {
      "module": "global_outlook.analyze_global",
      "ok": true,
      "error": null,
-     "ms": 154
+     "ms": 7
     },
     {
      "module": "yaogu_seed.analyze_yaogu_seed",
      "ok": true,
      "error": null,
-     "ms": 1039
+     "ms": 339
     },
     {
      "module": "outlook.analyze_outlook",
      "ok": true,
      "error": null,
-     "ms": 2
+     "ms": 3
     },
     {
      "module": "industry_space.analyze_industry_space",
@@ -64,7 +64,7 @@
      "module": "risk.plan_position",
      "ok": true,
      "error": null,
-     "ms": 25
+     "ms": 13
     },
     {
      "module": "shortterm.analyze_short_term",
@@ -82,13 +82,13 @@
      "module": "tech_conviction.analyze_tech_conviction",
      "ok": true,
      "error": null,
-     "ms": 8
+     "ms": 0
     },
     {
      "module": "review.build_review",
      "ok": true,
      "error": null,
-     "ms": 10
+     "ms": 13
     }
    ],
    "http": {}
@@ -11239,7 +11239,7 @@
   "saved_prediction": {
    "date": "2026-11-05",
    "mode": "evening",
-   "created_at": "2026-11-05T18:43:18",
+   "created_at": "2026-11-05T18:53:56",
    "index_close": 3689.79,
    "index_chg_pct": 0.1,
    "regime": "结构性行情",
