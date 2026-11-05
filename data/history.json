@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-05T18:31:27+08:00",
+ "updated_at": "2026-11-05T18:43:16+08:00",
  "records": [
   {
    "date": "2026-09-17",
@@ -334,7 +334,7 @@
    "up_ratio": 0.8513,
    "national_score": 52.2,
    "yaogu_count": 17,
-   "position_pct": 0.1187,
+   "position_pct": 0.2136,
    "mode": "evening"
   }
  ]
