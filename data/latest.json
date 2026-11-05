@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-05T18:53:55+08:00",
+  "generated_at": "2026-11-05T19:15:59+08:00",
   "trade_date": "2026-11-05",
   "mode": "evening",
   "session": "lunch",
@@ -28,43 +28,43 @@
      "module": "etf_view.analyze_etf",
      "ok": true,
      "error": null,
-     "ms": 80
+     "ms": 76
     },
     {
      "module": "yaogu.analyze_yaogu",
      "ok": true,
      "error": null,
-     "ms": 36
+     "ms": 31
     },
     {
      "module": "global_outlook.analyze_global",
      "ok": true,
      "error": null,
-     "ms": 7
+     "ms": 165
     },
     {
      "module": "yaogu_seed.analyze_yaogu_seed",
      "ok": true,
      "error": null,
-     "ms": 339
+     "ms": 1174
     },
     {
      "module": "outlook.analyze_outlook",
      "ok": true,
      "error": null,
-     "ms": 3
+     "ms": 2
     },
     {
      "module": "industry_space.analyze_industry_space",
      "ok": true,
      "error": null,
-     "ms": 2
+     "ms": 12
     },
     {
      "module": "risk.plan_position",
      "ok": true,
      "error": null,
-     "ms": 13
+     "ms": 2
     },
     {
      "module": "shortterm.analyze_short_term",
@@ -88,7 +88,7 @@
      "module": "review.build_review",
      "ok": true,
      "error": null,
-     "ms": 13
+     "ms": 12
     }
    ],
    "http": {}
@@ -11239,7 +11239,7 @@
   "saved_prediction": {
    "date": "2026-11-05",
    "mode": "evening",
-   "created_at": "2026-11-05T18:53:56",
+   "created_at": "2026-11-05T19:16:00",
    "index_close": 3689.79,
    "index_chg_pct": 0.1,
    "regime": "结构性行情",
@@ -11278,6 +11278,7 @@
    {
     "name": "贵金属",
     "score": 84.4,
+    "trade_tag": "配置型",
     "pe": 24.2,
     "pb": 4.46,
     "pe_pct": 4.2,
@@ -11302,6 +11303,7 @@
    {
     "name": "能源金属",
     "score": 84.2,
+    "trade_tag": "配置型",
     "pe": 16.3,
     "pb": 1.85,
     "pe_pct": 24.6,
@@ -11326,6 +11328,7 @@
    {
     "name": "证券Ⅱ",
     "score": 83.3,
+    "trade_tag": "配置型",
     "pe": 16.9,
     "pb": 1.42,
     "pe_pct": 2.3,
@@ -11350,6 +11353,7 @@
    {
     "name": "贸易Ⅱ",
     "score": 78.7,
+    "trade_tag": "配置型",
     "pe": 19.1,
     "pb": 2.08,
     "pe_pct": 3.5,
@@ -11374,6 +11378,7 @@
    {
     "name": "工业金属",
     "score": 78.5,
+    "trade_tag": "配置型",
     "pe": 15.5,
     "pb": 2.77,
     "pe_pct": 2.3,
@@ -11398,6 +11403,7 @@
    {
     "name": "医疗美容",
     "score": 74.8,
+    "trade_tag": "配置型",
     "pe": 43.3,
     "pb": 4.31,
     "pe_pct": 37.0,
@@ -11422,6 +11428,7 @@
    {
     "name": "半导体",
     "score": 74.1,
+    "trade_tag": "配置型",
     "pe": 82.0,
     "pb": 10.83,
     "pe_pct": 25.2,
@@ -11446,6 +11453,7 @@
    {
     "name": "其他电子Ⅱ",
     "score": 72.6,
+    "trade_tag": "配置型",
     "pe": 38.9,
     "pb": 7.05,
     "pe_pct": 0.5,
@@ -11470,6 +11478,7 @@
    {
     "name": "特钢Ⅱ",
     "score": 72.5,
+    "trade_tag": "配置型",
     "pe": 18.0,
     "pb": 1.41,
     "pe_pct": 20.6,
@@ -11494,6 +11503,7 @@
    {
     "name": "旅游零售Ⅱ",
     "score": 71.0,
+    "trade_tag": "交易型（资金强/中期偏弱）",
     "pe": 26.9,
     "pb": 20.27,
     "pe_pct": 18.8,
@@ -11518,6 +11528,7 @@
    {
     "name": "航海装备Ⅱ",
     "score": 70.4,
+    "trade_tag": "配置型",
     "pe": 19.0,
     "pb": 3.49,
     "pe_pct": 0.1,
@@ -11542,6 +11553,7 @@
    {
     "name": "小金属",
     "score": 70.2,
+    "trade_tag": "交易型（资金强/中期偏弱）",
     "pe": 57.2,
     "pb": 6.76,
     "pe_pct": 58.5,
@@ -11566,6 +11578,7 @@
    {
     "name": "商用车",
     "score": 68.4,
+    "trade_tag": "配置型",
     "pe": 15.8,
     "pb": 2.67,
     "pe_pct": 0.2,
@@ -11590,6 +11603,7 @@
    {
     "name": "风电设备",
     "score": 68.1,
+    "trade_tag": "中性",
     "pe": 34.4,
     "pb": 1.93,
     "pe_pct": 30.8,
@@ -11614,6 +11628,7 @@
    {
     "name": "电池",
     "score": 67.7,
+    "trade_tag": "交易型（资金强/中期偏弱）",
     "pe": 31.5,
     "pb": 3.26,
     "pe_pct": 17.8,
@@ -11638,6 +11653,7 @@
    {
     "name": "食品加工",
     "score": 67.5,
+    "trade_tag": "配置型",
     "pe": 24.3,
     "pb": 2.85,
     "pe_pct": 12.0,
@@ -11662,6 +11678,7 @@
    {
     "name": "多元金融",
     "score": 66.6,
+    "trade_tag": "配置型",
     "pe": 23.7,
     "pb": 1.59,
     "pe_pct": 26.0,
@@ -11686,6 +11703,7 @@
    {
     "name": "橡胶",
     "score": 66.3,
+    "trade_tag": "中性",
     "pe": 42.2,
     "pb": 3.14,
     "pe_pct": 11.3,
@@ -11710,6 +11728,7 @@
    {
     "name": "酒店餐饮",
     "score": 65.9,
+    "trade_tag": "配置型",
     "pe": 43.4,
     "pb": 4.43,
     "pe_pct": 15.5,
@@ -11734,6 +11753,7 @@
    {
     "name": "教育",
     "score": 65.8,
+    "trade_tag": "中性",
     "pe": 66.6,
     "pb": 9.36,
     "pe_pct": 7.0,
@@ -11881,19 +11901,31 @@
     "军工电子Ⅱ",
     "白酒Ⅱ"
    ],
-   "avoid": [
+   "trade": [
+    "旅游零售Ⅱ",
+    "小金属",
+    "电池",
+    "保险Ⅱ",
+    "种植业",
+    "休闲食品",
+    "白酒Ⅱ",
     "光伏设备",
-    "环保设备Ⅱ",
-    "个护用品",
-    "电网设备",
+    "游戏Ⅱ",
+    "纺织制造"
+   ],
+   "avoid": [
     "专用设备",
     "饰品",
     "IT服务Ⅱ",
-    "航空装备Ⅱ"
+    "航空装备Ⅱ",
+    "化学原料",
+    "专业服务",
+    "通信服务",
+    "家电零部件Ⅱ"
    ]
   },
   "news_total": 96,
-  "conclusion": "空间最大的三个方向：贵金属（84.4分，净利+47%、PE4%分位）、能源金属（84.2分，净利+103%、PE25%分位）、证券Ⅱ（83.3分，净利+14%、PE2%分位）；最该回避：光伏设备、环保设备Ⅱ、个护用品、电网设备（估值高且业绩未改善）。"
+  "conclusion": "配置型机会（便宜+景气双优）：贵金属（84.4分，净利+47%、PE4%分位）、能源金属（84.2分，净利+103%、PE25%分位）、证券Ⅱ（83.3分，净利+14%、PE2%分位）；交易型机会（资金在打、但估值/景气不支持长期配置，只宜短线）：旅游零售Ⅱ、小金属、电池、保险Ⅱ、种植业；配置回避（贵且没业绩、资金也没来）：专用设备、饰品、IT服务Ⅱ、航空装备Ⅱ。"
  },
  "tech_conviction": {
   "profile": "aggressive",
