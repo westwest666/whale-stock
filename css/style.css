@@ -2878,3 +2878,46 @@ body {
   .tech-score-big { font-size: 30px; }
   .tech-metric { flex: 1 1 46%; padding: 6px 9px; }
 }
+
+
+/* 维度说明（配置维度 vs 动量维度） */
+.ind-dim-note {
+  margin-top: 10px;
+  padding: 8px 13px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.022);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 2px solid rgba(245, 196, 81, 0.55);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.ind-dim-note b { color: #e2c88f; font-weight: 700; }
+
+/* 定位列（配置型 / 交易型 / 配置回避 / 中性） */
+.tag-pos {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 1px 7px;
+  white-space: nowrap;
+  cursor: help;
+}
+.tag-pos.alloc { color: #7ce0b6; background: rgba(22, 199, 132, 0.1); border: 1px solid rgba(22, 199, 132, 0.32); }
+.tag-pos.trade { color: #f5c451; background: rgba(245, 196, 81, 0.12); border: 1px solid rgba(245, 196, 81, 0.38); }
+.tag-pos.avoid { color: #ff9aa4; background: rgba(255, 77, 94, 0.1); border: 1px solid rgba(255, 77, 94, 0.34); }
+.tag-pos.neutral { color: var(--muted); background: rgba(147, 168, 189, 0.12); border: 1px solid rgba(147, 168, 189, 0.28); }
+
+/* 交易型分层（黄色） */
+.ind-tier--trade { border-left: 3px solid var(--gold); background: linear-gradient(90deg, rgba(245, 196, 81, 0.08), rgba(255, 255, 255, 0.015)); }
+.ind-tier--trade .ind-tier-title { color: var(--gold); }
+.ind-tier--trade .ind-chip { color: #f0d49a; background: rgba(245, 196, 81, 0.09); border-color: rgba(245, 196, 81, 0.3); }
+.ind-tiers { grid-template-columns: 1.1fr 0.95fr 1.05fr 0.95fr; }
+@media (max-width: 1280px) {
+  .ind-tiers { grid-template-columns: 1fr 1fr; }
+  .ind-tier--core { grid-column: span 1; }
+}
+@media (max-width: 720px) {
+  .industry-table { min-width: 700px; }
+}
