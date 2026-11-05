@@ -95,6 +95,10 @@
       <span class="status-k">模式</span>
       <span class="badge badge-mode" id="st-mode">—</span>
     </div>
+    <div class="status-item" id="st-profile-item" hidden>
+      <span class="status-k">档位</span>
+      <span class="badge badge-profile" id="st-profile">—</span>
+    </div>
     <div class="status-item">
       <span class="status-k">数据健康度</span>
       <span class="status-v" id="st-health">—</span>
@@ -303,6 +307,65 @@
       </div>
     </div>
     <p class="summary-text" id="portfolio-summary"></p>
+  </section>
+
+  <!-- ============ 5.5 中国科技长线（激进档，tech_conviction） ============ -->
+  <section class="card card--tech" id="sec-tech" hidden>
+    <div class="section-head">
+      <h2>中国科技长线 · 档位执行方案</h2>
+      <span class="section-meta" id="tech-meta">—</span>
+      <div class="section-actions"><span class="warn-tag">仓位执行方案 · 非收益承诺</span></div>
+    </div>
+    <div class="tech-hero">
+      <div class="tech-score-card">
+        <div class="chart chart-thesis" id="thesis-chart"></div>
+        <div class="tech-score-side">
+          <div class="tech-score-row">
+            <span class="tech-score-big" id="tech-score">—</span>
+            <span class="tech-score-unit">/100 证据分</span>
+          </div>
+          <span class="tech-label" id="tech-label">—</span>
+          <span class="tech-horizon" id="tech-horizon">—</span>
+        </div>
+      </div>
+      <div class="tech-one-line" id="tech-one-line">—</div>
+    </div>
+    <div class="sub-head"><h3>证据维度</h3><span class="sub-meta">长期看好的 5 个理由（分数越高越支持）</span></div>
+    <div class="tech-reasons" id="tech-reasons"></div>
+    <div class="sub-head"><h3>关键指标</h3><span class="sub-meta">ETF 与半导体行业（申万二级）</span></div>
+    <div class="tech-metrics" id="tech-metrics"></div>
+    <div class="sub-head">
+      <h3>分批建仓计划</h3>
+      <span class="sub-meta" id="tech-plan-meta">卫星仓总额 · 4 批执行</span>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table tech-plan-table" id="tech-plan-table">
+        <thead>
+          <tr>
+            <th>批次</th>
+            <th class="num">比例</th>
+            <th>触发条件</th>
+            <th class="num">参考价</th>
+            <th class="num">金额<br><span class="th-sub">实际 / 计划</span></th>
+            <th class="num">份数</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody id="tech-plan-tbody"><tr><td colspan="7" class="empty-state">正在加载…</td></tr></tbody>
+      </table>
+    </div>
+    <div class="tech-bottom">
+      <div class="tech-bottom-col">
+        <div class="sub-head"><h3>失效条件</h3><span class="sub-meta">什么时候必须认错</span></div>
+        <ul class="invalid-list" id="tech-invalidators"></ul>
+      </div>
+      <div class="tech-bottom-col">
+        <div class="sub-head"><h3>风险预算</h3><span class="sub-meta">先想最坏情况，再决定买多少</span></div>
+        <div class="tech-risk" id="tech-risk"></div>
+      </div>
+    </div>
+    <p class="summary-text" id="tech-summary"></p>
+    <div class="tech-disclaimer" id="tech-disclaimer">这是仓位执行方案，不是收益承诺；激进档意味着更大回撤容忍度。</div>
   </section>
 
   <!-- ============ 6. 大盘全景 ============ -->
