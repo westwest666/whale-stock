@@ -2643,6 +2643,7 @@
       var defs = [
         { key: 'core', cls: 'ind-tier--core', title: '空间 + 景气双优', sub: '核心关注（便宜且利润在改善）' },
         { key: 'watch', cls: 'ind-tier--watch', title: '跟踪观察', sub: '等触发条件再动' },
+        { key: 'trade', cls: 'ind-tier--trade', title: '交易型（只宜短线）', sub: '资金在打，但中期偏弱' },
         { key: 'avoid', cls: 'ind-tier--avoid', title: '贵且没业绩 · 回避', sub: '估值高且盈利未改善' }
       ];
       var tierHtml = defs.map(function (d) {
@@ -2699,6 +2700,20 @@
         if (coreSet[name]) rowCls = ' class="ind-tr--core"';
         else if (avoidSet[name]) rowCls = ' class="ind-tr--avoid"';
 
+        /* 定位：配置型 / 交易型 / 配置回避 / 中性 */
+        var tag = String(x.trade_tag || '');
+        var posShort = '—', posCls = 'neutral';
+        if (tag) {
+          if (/配置回避/.test(tag)) { posShort = '配置回避'; posCls = 'avoid'; }
+          else if (/交易型/.test(tag)) { posShort = '交易型'; posCls = 'trade'; }
+          else if (/配置型/.test(tag)) { posShort = '配置型'; posCls = 'alloc'; }
+          else if (/中性/.test(tag)) { posShort = '中性'; posCls = 'neutral'; }
+          else { posShort = tag; posCls = 'neutral'; }
+        }
+        var posCell = tag
+          ? '<td><span class="tag-pos ' + posCls + '" title="' + esc(tag) + '">' + esc(posShort) + '</span></td>'
+          : '<td class="muted">—</td>';
+
         return '<tr' + rowCls + '>' +
           '<td class="col-rank"><span class="ind-rank' + rankCls + '">' + (i + 1) + '</span></td>' +
           '<td class="name-cell"><span class="ind-name">' +
@@ -2709,6 +2724,7 @@
               (score == null ? 0 : clamp(score, 0, 100)).toFixed(1) + '%"></i></span>' +
             '<span class="ind-score-num">' + (score == null ? '—' : score.toFixed(1)) + '</span>' +
           '</span></td>' +
+          posCell +
           '<td class="num">' + (pe == null ? '—' : (pe > 0 ? fmt(pe, 1) : '亏损')) + '</td>' +
           '<td class="num"><span class="ind-cheap">' +
             '<span class="ind-cheap-num ' + cheapCls + '">' + (pePct == null ? '—' : pePct.toFixed(1) + '%') + cheapTag + '</span>' +
@@ -2732,7 +2748,7 @@
             (news == null ? '—' : fmtInt(news)) + '</span></td>' +
         '</tr>';
       }).join('');
-      if (!rows.length) tbody.innerHTML = '<tr><td colspan="10" class="empty-state">行业空间数据缺失</td></tr>';
+      if (!rows.length) tbody.innerHTML = '<tr><td colspan="11" class="empty-state">行业空间数据缺失</td></tr>';
     }
 
     /* 概念方向小卡 */
