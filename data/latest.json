@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-05T19:23:33+08:00",
+  "generated_at": "2026-11-05T20:59:01+08:00",
   "trade_date": "2026-11-05",
   "mode": "evening",
   "session": "lunch",
@@ -16,67 +16,67 @@
      "module": "regime.analyze_regime",
      "ok": true,
      "error": null,
-     "ms": 4
+     "ms": 3
     },
     {
      "module": "national_team.analyze_national_team",
      "ok": true,
      "error": null,
-     "ms": 1
+     "ms": 0
     },
     {
      "module": "etf_view.analyze_etf",
      "ok": true,
      "error": null,
-     "ms": 92
+     "ms": 81
     },
     {
      "module": "yaogu.analyze_yaogu",
      "ok": true,
      "error": null,
-     "ms": 32
+     "ms": 31
     },
     {
      "module": "global_outlook.analyze_global",
      "ok": true,
      "error": null,
-     "ms": 6
+     "ms": 2371
     },
     {
      "module": "yaogu_seed.analyze_yaogu_seed",
      "ok": true,
      "error": null,
-     "ms": 346
+     "ms": 4453
     },
     {
      "module": "outlook.analyze_outlook",
      "ok": true,
      "error": null,
-     "ms": 3
+     "ms": 7
     },
     {
      "module": "industry_space.analyze_industry_space",
      "ok": true,
      "error": null,
-     "ms": 2
+     "ms": 4
     },
     {
      "module": "risk.plan_position",
      "ok": true,
      "error": null,
-     "ms": 3
+     "ms": 5
     },
     {
      "module": "shortterm.analyze_short_term",
      "ok": true,
      "error": null,
-     "ms": 1
+     "ms": 4
     },
     {
      "module": "portfolio.build_portfolio",
      "ok": true,
      "error": null,
-     "ms": 0
+     "ms": 1
     },
     {
      "module": "tech_conviction.analyze_tech_conviction",
@@ -88,7 +88,7 @@
      "module": "review.build_review",
      "ok": true,
      "error": null,
-     "ms": 12
+     "ms": 14
     }
    ],
    "http": {}
@@ -11239,7 +11239,7 @@
   "saved_prediction": {
    "date": "2026-11-05",
    "mode": "evening",
-   "created_at": "2026-11-05T19:23:34",
+   "created_at": "2026-11-05T20:59:08",
    "index_close": 3689.79,
    "index_chg_pct": 0.1,
    "regime": "结构性行情",
