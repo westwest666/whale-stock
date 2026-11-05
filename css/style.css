@@ -238,7 +238,7 @@ body {
   align-items: start;
 }
 #sec-outlook, #sec-global, #sec-industry, #sec-seed, #sec-shortterm, #sec-portfolio,
-#sec-market, #sec-verdict, #sec-national, #sec-focus, #sec-action,
+#sec-market, #sec-tech, #sec-verdict, #sec-national, #sec-focus, #sec-action,
 #sec-macro, #sec-yaogu, #sec-backtest, #sec-history, #sec-review { grid-column: span 12; }
 
 .card {
@@ -2632,4 +2632,249 @@ body {
 }
 @media (max-width: 420px) {
   .concept-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================== 顶部档位徽标 =========================== */
+.badge-profile {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #ffd9a8;
+  background: linear-gradient(90deg, rgba(255, 77, 94, 0.16), rgba(245, 196, 81, 0.14));
+  border: 1px solid rgba(245, 196, 81, 0.45);
+  padding: 2px 9px;
+  white-space: nowrap;
+}
+.badge-profile.is-aggressive {
+  color: #ffe3b0;
+  box-shadow: 0 0 12px rgba(245, 196, 81, 0.22);
+}
+
+/* =========================== 5.5 中国科技长线 =========================== */
+.card--tech {
+  border-color: rgba(245, 196, 81, 0.28);
+  background:
+    radial-gradient(720px 260px at 8% -10%, rgba(255, 77, 94, 0.1), transparent 62%),
+    radial-gradient(620px 240px at 92% -6%, rgba(245, 196, 81, 0.09), transparent 60%),
+    linear-gradient(180deg, rgba(24, 33, 52, 0.95), rgba(10, 15, 26, 0.96));
+}
+
+.tech-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 470px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+.tech-score-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 4px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.022);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-width: 0;
+}
+.chart-thesis { width: 168px; height: 156px; flex: 0 0 auto; }
+.tech-score-side { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.tech-score-row { display: flex; align-items: baseline; gap: 6px; }
+.tech-score-big {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #ffe3b0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 26px rgba(245, 196, 81, 0.35);
+}
+.tech-score-unit { font-size: 11px; color: var(--muted); }
+.tech-label {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  border-radius: 6px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+.tech-label.lv-strong {
+  color: #2a1405;
+  background: linear-gradient(135deg, #ff7b88, var(--gold));
+  box-shadow: 0 0 16px rgba(245, 196, 81, 0.35);
+}
+.tech-label.lv-good { color: #062a33; background: linear-gradient(135deg, #67e8f9, #22d3ee); }
+.tech-label.lv-neutral { color: #1a2230; background: linear-gradient(135deg, #c3d0de, #93a8bd); }
+.tech-label.lv-cautious { color: #06281c; background: linear-gradient(135deg, #7ce0b6, #16c784); }
+.tech-horizon { font-size: 11px; color: var(--muted-2); }
+.tech-one-line {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, rgba(245, 196, 81, 0.08), rgba(255, 255, 255, 0.018));
+  border: 1px solid rgba(245, 196, 81, 0.24);
+  border-left: 3px solid var(--gold);
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #f0e2c2;
+  letter-spacing: 0.2px;
+}
+
+/* 证据维度 */
+.tech-reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 8px;
+}
+.reason-row {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 40px;
+  gap: 9px;
+  align-items: center;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.024);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  min-width: 0;
+}
+.reason-name { font-size: 12px; font-weight: 600; color: #cfdced; white-space: nowrap; }
+.reason-bar-wrap { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.reason-track { height: 6px; border-radius: 4px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+.reason-fill { display: block; height: 100%; border-radius: 4px; }
+.reason-fill.high { background: linear-gradient(90deg, rgba(255, 77, 94, 0.4), var(--gold)); }
+.reason-fill.mid { background: linear-gradient(90deg, rgba(34, 211, 238, 0.35), var(--cyan)); }
+.reason-fill.low { background: linear-gradient(90deg, rgba(147, 168, 189, 0.3), rgba(147, 168, 189, 0.8)); }
+.reason-text { font-size: 10.5px; line-height: 1.5; color: var(--muted); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.reason-score { font-size: 13px; font-weight: 800; color: var(--text-strong); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 关键指标 */
+.tech-metrics { display: flex; flex-wrap: wrap; gap: 8px; }
+.tech-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.022);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  min-width: 104px;
+}
+.tech-metric .k { font-size: 10px; color: var(--muted-2); white-space: nowrap; }
+.tech-metric .v { font-size: 13.5px; font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.tech-metric .v small { font-size: 10px; font-weight: 500; color: var(--muted); margin-left: 2px; }
+
+/* 建仓计划表 */
+.tech-plan-table { min-width: 900px; }
+.tech-plan-table tbody tr.is-now td { background: rgba(245, 196, 81, 0.07); }
+.tech-plan-table tbody tr.is-now td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+.now-badge {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #2a1405;
+  background: linear-gradient(135deg, #ffd48a, var(--gold));
+  border-radius: 3px;
+  padding: 0 5px;
+  vertical-align: 1px;
+  animation: now-pulse 2.2s ease-in-out infinite;
+}
+@keyframes now-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.62; } }
+.tranche-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #08131f;
+  background: rgba(255, 255, 255, 0.14);
+}
+.tranche-badge.t1 { background: linear-gradient(135deg, #ffd48a, var(--gold)); }
+.tech-plan-amount { display: flex; flex-direction: column; align-items: flex-end; gap: 0; line-height: 1.3; }
+.tech-plan-amount .main { font-size: 12.5px; font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.tech-plan-amount .sub { font-size: 9.5px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+.tech-plan-when { font-size: 12px; font-weight: 600; color: #cfdced; white-space: nowrap; }
+
+/* 失效条件 / 风险预算 */
+.tech-bottom { display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px; }
+.tech-bottom-col { min-width: 0; }
+.invalid-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.invalid-list li {
+  position: relative;
+  padding: 8px 12px 8px 30px;
+  border-radius: 8px;
+  background: rgba(255, 77, 94, 0.06);
+  border: 1px solid rgba(255, 77, 94, 0.22);
+  font-size: 11.5px;
+  line-height: 1.68;
+  color: #f0c9ce;
+}
+.invalid-list li::before {
+  content: "✕";
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--up);
+}
+.tech-risk { display: flex; flex-direction: column; gap: 9px; }
+.tech-risk-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.tech-risk-num {
+  padding: 10px 13px;
+  border-radius: 9px;
+  background: rgba(255, 77, 94, 0.09);
+  border: 1px solid rgba(255, 77, 94, 0.3);
+}
+.tech-risk-num .k { font-size: 10.5px; color: #ffb4bb; }
+.tech-risk-num .v { font-size: 22px; font-weight: 800; color: #ff8b95; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.tech-risk-num .v small { font-size: 11px; font-weight: 500; color: #d99aa2; }
+.tech-risk-rules { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.tech-risk-rules li {
+  position: relative;
+  padding: 7px 11px 7px 11px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.022);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-left: 2px solid rgba(251, 191, 36, 0.5);
+  font-size: 11.5px;
+  line-height: 1.66;
+  color: #cbb98f;
+}
+.tech-risk-rules .k { font-weight: 700; color: var(--warn); margin-right: 4px; }
+.tech-disclaimer {
+  margin-top: 12px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted-2);
+  text-align: center;
+}
+
+@media (max-width: 1080px) {
+  .tech-hero { grid-template-columns: 1fr; }
+  .tech-bottom { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .tech-score-card { padding-right: 8px; }
+  .chart-thesis { width: 140px; height: 138px; }
+  .tech-score-big { font-size: 34px; }
+  .tech-reasons { grid-template-columns: 1fr; }
+  .reason-row { grid-template-columns: 56px minmax(0, 1fr) 36px; }
+  .tech-plan-table { min-width: 820px; }
+  .tech-metrics { gap: 6px; }
+  .tech-metric { flex: 1 1 44%; min-width: 0; }
+  .tech-risk-num .v { font-size: 19px; }
+  .badge-profile { font-size: 10px; }
+}
+@media (max-width: 420px) {
+  .chart-thesis { width: 124px; height: 128px; }
+  .tech-score-big { font-size: 30px; }
+  .tech-metric { flex: 1 1 46%; padding: 6px 9px; }
 }
