@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T22:41:39+08:00",
+ "updated_at": "2026-11-06T22:46:17+08:00",
  "records": [
   {
    "date": "2026-09-17",
@@ -341,7 +341,7 @@
    "date": "2026-11-06",
    "regime": "熊市",
    "code": "bear",
-   "score": -35.5,
+   "score": -35.4,
    "bull_prob": 5.2,
    "etf_close": 0.701,
    "etf_chg_pct": -3.71,
