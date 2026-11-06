@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T09:25:26+08:00",
+ "updated_at": "2026-11-06T22:41:39+08:00",
  "records": [
   {
    "date": "2026-09-17",
@@ -322,20 +322,37 @@
   },
   {
    "date": "2026-11-05",
-   "regime": "弱势调整",
-   "code": "weak",
-   "score": -23.3,
-   "bull_prob": 7.9,
-   "etf_close": 0.687,
-   "etf_chg_pct": -5.63,
-   "turnover_yi": 0.0,
-   "limit_up": 84,
+   "regime": "结构性行情",
+   "code": "structural",
+   "score": 26.7,
+   "bull_prob": 37.6,
+   "etf_close": 0.712,
+   "etf_chg_pct": 2.45,
+   "turnover_yi": 14643.8,
+   "limit_up": 61,
    "limit_down": 0,
-   "up_ratio": 0.0173,
-   "national_score": 50.0,
-   "yaogu_count": 2,
-   "position_pct": 0.0458,
-   "mode": "morning"
+   "up_ratio": 0.8513,
+   "national_score": 52.2,
+   "yaogu_count": 17,
+   "position_pct": 0.2136,
+   "mode": "evening"
+  },
+  {
+   "date": "2026-11-06",
+   "regime": "熊市",
+   "code": "bear",
+   "score": -35.5,
+   "bull_prob": 5.2,
+   "etf_close": 0.701,
+   "etf_chg_pct": -3.71,
+   "turnover_yi": 16577.9,
+   "limit_up": 32,
+   "limit_down": 15,
+   "up_ratio": 0.1369,
+   "national_score": 48.8,
+   "yaogu_count": 13,
+   "position_pct": 0.0,
+   "mode": "evening"
   }
  ]
 }
