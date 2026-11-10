@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-10T22:30:25+08:00",
+ "updated_at": "2026-11-10T22:40:19+08:00",
  "records": [
   {
    "date": "2026-09-17",
@@ -375,8 +375,8 @@
    "date": "2026-11-10",
    "regime": "震荡市",
    "code": "range",
-   "score": 10.5,
-   "bull_prob": 21.8,
+   "score": 9.2,
+   "bull_prob": 20.7,
    "etf_close": 0.705,
    "etf_chg_pct": 1.15,
    "turnover_yi": 15048.1,
