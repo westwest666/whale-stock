@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-17T22:30:31+08:00",
+ "updated_at": "2026-11-17T22:40:26+08:00",
  "records": [
   {
    "date": "2026-09-17",
@@ -460,8 +460,8 @@
    "date": "2026-11-17",
    "regime": "熊市",
    "code": "bear",
-   "score": -39.8,
-   "bull_prob": 4.4,
+   "score": -39.1,
+   "bull_prob": 4.5,
    "etf_close": 0.686,
    "etf_chg_pct": 3.63,
    "turnover_yi": 14576.9,
