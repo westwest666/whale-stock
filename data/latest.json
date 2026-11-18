@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-11-18T22:32:08+08:00",
+  "generated_at": "2026-11-18T22:42:27+08:00",
   "trade_date": "2026-11-18",
   "mode": "evening",
   "session": "closed",
@@ -12,6 +12,11 @@
    "failed": 0,
    "errors": [
     {
+     "label": "indices",
+     "url": "https://push2.eastmoney.com/api/qt/ulist.np/get",
+     "error": "ConnectionError: Remote end closed connection without response"
+    },
+    {
      "label": "idx_kline_m1",
      "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
      "error": "ConnectionError: Remote end closed connection without response"
@@ -22,43 +27,38 @@
      "error": "ConnectionError: Remote end closed connection without response"
     },
     {
+     "label": "overseas",
+     "url": "https://push2.eastmoney.com/api/qt/ulist.np/get",
+     "error": "ConnectionError: Remote end closed connection without response"
+    },
+    {
+     "label": "etf_holdings_q",
+     "url": "https://push2.eastmoney.com/api/qt/ulist.np/get",
+     "error": "ConnectionError: Remote end closed connection without response"
+    },
+    {
      "label": "etf_trend",
      "url": "https://push2.eastmoney.com/api/qt/stock/trends2/get",
      "error": "ConnectionError: Remote end closed connection without response"
     },
     {
-     "label": "stock_k_002685",
-     "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+     "label": "etf_peers",
+     "url": "https://push2.eastmoney.com/api/qt/ulist.np/get",
      "error": "ConnectionError: Remote end closed connection without response"
     },
     {
-     "label": "stock_k_603324",
-     "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+     "label": "etf_flow",
+     "url": "https://push2.eastmoney.com/api/qt/ulist.np/get",
      "error": "ConnectionError: Remote end closed connection without response"
     },
     {
-     "label": "stock_k_603030",
-     "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+     "label": "flow_in",
+     "url": "https://push2.eastmoney.com/api/qt/clist/get",
      "error": "ConnectionError: Remote end closed connection without response"
     },
     {
-     "label": "stock_k_002771",
-     "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
-     "error": "ConnectionError: Remote end closed connection without response"
-    },
-    {
-     "label": "stock_k_002148",
-     "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
-     "error": "ConnectionError: Remote end closed connection without response"
-    },
-    {
-     "label": "stock_k_000707",
-     "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
-     "error": "ConnectionError: Remote end closed connection without response"
-    },
-    {
-     "label": "stock_k_600410",
-     "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get",
+     "label": "flow_out",
+     "url": "https://push2.eastmoney.com/api/qt/clist/get",
      "error": "ConnectionError: Remote end closed connection without response"
     }
    ],
@@ -67,100 +67,102 @@
      "module": "regime.analyze_regime",
      "ok": true,
      "error": null,
-     "ms": 41
+     "ms": 9
     },
     {
      "module": "national_team.analyze_national_team",
      "ok": true,
      "error": null,
-     "ms": 19
+     "ms": 1
     },
     {
      "module": "etf_view.analyze_etf",
      "ok": true,
      "error": null,
-     "ms": 204
+     "ms": 212
     },
     {
      "module": "yaogu.analyze_yaogu",
      "ok": true,
      "error": null,
-     "ms": 89
+     "ms": 74
     },
     {
      "module": "global_outlook.analyze_global",
      "ok": true,
      "error": null,
-     "ms": 49181
+     "ms": 47922
     },
     {
      "module": "yaogu_seed.analyze_yaogu_seed",
      "ok": true,
      "error": null,
-     "ms": 55867
+     "ms": 56089
     },
     {
      "module": "outlook.analyze_outlook",
      "ok": true,
      "error": null,
-     "ms": 24
+     "ms": 5
     },
     {
      "module": "industry_space.analyze_industry_space",
      "ok": true,
      "error": null,
-     "ms": 53
+     "ms": 5
     },
     {
      "module": "risk.plan_position",
      "ok": true,
      "error": null,
-     "ms": 25
+     "ms": 3
     },
     {
      "module": "shortterm.analyze_short_term",
      "ok": true,
      "error": null,
-     "ms": 19
+     "ms": 2
     },
     {
      "module": "portfolio.build_portfolio",
      "ok": true,
      "error": null,
-     "ms": 21
+     "ms": 1
     },
     {
      "module": "tech_conviction.analyze_tech_conviction",
      "ok": true,
      "error": null,
-     "ms": 19
+     "ms": 1
     },
     {
      "module": "review.build_review",
      "ok": true,
      "error": null,
-     "ms": 54
+     "ms": 30
     }
    ],
    "http": {
-    "requests": 213,
-    "cache_hits": 5,
-    "failures": 45
+    "requests": 129,
+    "cache_hits": 48,
+    "failures": 53,
+    "fallback_hits": 4
    }
-  }
+  },
+  "us_refreshed_at": "2026-11-18T23:30:09"
  },
  "regime": {
   "label": "弱势调整",
   "code": "weak",
-  "score": -31.2,
+  "score": -34.0,
   "prob": {
-   "bull": 0.0608,
-   "range": 0.5116,
-   "bear": 0.4276
+   "bull": 0.055,
+   "range": 0.4847,
+   "bear": 0.4603
   },
   "confidence": 0.33,
   "stage": "MA20下方调整第5个交易日（距MA20 -1.7%）",
-  "summary": "上证3587.83点(+0.09%)、深证+0.20%，两市成交13697亿、为5日均量0.87倍；涨1310家跌3853家、涨停41家。三指数仍在MA60下方，属中期调整中的超跌反弹，判定为弱势调整（-31.2分）。",
+  "summary": "上证3587.83点(+0.09%)、深证+0.20%、创业板+0.85%、科创50+2.19%，两市成交13697亿、为5日均量0.87倍。三指数仍在MA60下方，属中期调整中的超跌反弹，判定为弱势调整（-34.0分）。",
   "drivers": [
    {
     "name": "趋势",
@@ -173,10 +175,10 @@
    {
     "name": "广度",
     "weight": 0.18,
-    "raw": -53.8,
-    "value": -9.7,
+    "raw": -69.1,
+    "value": -12.4,
     "signal": "-",
-    "text": "上涨1310家/下跌3853家（上涨占比24.7%）；由日线推算5日广度均值30%；涨停41家/跌停40家"
+    "text": "上涨0家/下跌0家（上涨占比0.0%）；由日线推算5日广度均值30%；涨停41家/跌停40家"
    },
    {
     "name": "量能",
@@ -189,26 +191,26 @@
    {
     "name": "宏观",
     "weight": 0.16,
-    "raw": 20.9,
-    "value": 3.3,
+    "raw": 23.5,
+    "value": 3.8,
     "signal": "+",
-    "text": "PMI 49.3（方向不明）；CPI同比+0.7%；PPI同比+5.7%、连续3个月回升；M2同比+7.1%；外盘纳指-0.7%、恒指-0.9%、美元指数+0.2%"
+    "text": "PMI 49.3（方向不明）；CPI同比+0.7%；PPI同比+5.7%、连续3个月回升；M2同比+7.1%；外盘纳指+0.1%、恒指-0.9%、美元指数+0.0%"
    },
    {
     "name": "资金",
     "weight": 0.12,
-    "raw": 3.8,
-    "value": 0.5,
-    "signal": "0",
-    "text": "主力净流入-34.1亿；宽基ETF成交为20日均量0.67倍（最高510300 0.91倍）；板块资金净额合计+143亿（主线8个板块合计+247亿）"
+    "raw": -20.7,
+    "value": -2.5,
+    "signal": "-",
+    "text": "主力净流入-34.1亿；宽基ETF成交为20日均量0.67倍（最高510300 0.91倍）；板块资金数据缺失（该源数据缺失，按中性）"
    },
    {
     "name": "情绪",
     "weight": 0.1,
-    "raw": -23.3,
-    "value": -2.3,
-    "signal": "-",
-    "text": "涨跌分布偏多（涨1310家/跌3853家，偏度25.4%）；连板高度4板；炸板率44%；涨停41家/跌停40家；指数平均涨幅+0.4%"
+    "raw": 2.0,
+    "value": 0.2,
+    "signal": "0",
+    "text": "连板高度4板；炸板率44%；涨停41家/跌停40家；指数平均涨幅+0.4%"
    }
   ],
   "position_advice_pct": 0.1,
@@ -235,7 +237,7 @@
     "name": "创业板指",
     "close": 2311.62,
     "chg_pct": 0.85,
-    "amount_yi": 3414.3
+    "amount_yi": 3368.3
    },
    {
     "code": "000688",
@@ -267,10 +269,10 @@
    }
   ],
   "breadth": {
-   "up": 1310,
-   "down": 3853,
-   "flat": 131,
-   "up_ratio": 0.2474,
+   "up": 0,
+   "down": 0,
+   "flat": 0,
+   "up_ratio": 0.0,
    "limit_up": 41,
    "limit_down": 40
   },
@@ -287,13 +289,13 @@
    "is_partial": false
   },
   "emotion": {
-   "score": 38.3,
-   "label": "偏冷",
+   "score": 51.0,
+   "label": "中性",
    "limit_up": 41,
    "limit_down": 40,
    "max_streak": 4,
    "broken_rate": 0.438,
-   "summary": "涨1310家跌3853家（上涨占比24.7%），涨停41家、跌停40家，最高4板，炸板率44%，情绪偏冷。"
+   "summary": "涨停41家、跌停40家，最高4板，炸板率44%，情绪中性。"
   },
   "chart": {
    "dates": [
@@ -820,112 +822,85 @@
    {
     "code": "DJIA",
     "name": "道琼斯",
-    "close": 50759.42,
-    "chg_pct": -1.64,
-    "as_of": "11-18 04:59",
+    "close": 50289.3086,
+    "chg_pct": -0.93,
+    "as_of": "11-18 23:30",
     "market": "US",
     "signal": "risk_off"
    },
    {
     "code": "NDX",
-    "name": "纳斯达克",
-    "close": 24328.38,
-    "chg_pct": -0.74,
-    "as_of": "11-18 05:00",
+    "name": "纳斯达克100",
+    "close": 27116.0781,
+    "chg_pct": 0.42,
+    "as_of": "11-18 23:30",
     "market": "US",
-    "signal": "risk_off"
-   },
-   {
-    "code": "SPX",
-    "name": "标普500",
-    "close": 7340.53,
-    "chg_pct": -1.03,
-    "as_of": "11-18 04:59",
-    "market": "US",
-    "signal": "risk_off"
+    "signal": "neutral"
    },
    {
     "code": "HSI",
     "name": "恒生指数",
     "close": 23294.75,
     "chg_pct": -0.91,
-    "as_of": "11-18 16:08",
+    "as_of": "11-18 23:30",
     "market": "HK",
     "signal": "risk_off"
    },
    {
     "code": "USDCNH",
-    "name": "美元兑离岸人民币",
-    "close": 6.6687,
-    "chg_pct": 0.03,
-    "as_of": "11-18 22:30",
+    "name": "离岸人民币",
+    "close": 6.668,
+    "chg_pct": 0.01,
+    "as_of": "11-18 23:30",
     "market": "OTHER",
     "signal": "neutral"
    },
    {
     "code": "UDI",
     "name": "美元指数",
-    "close": 103.81,
-    "chg_pct": 0.24,
-    "as_of": "11-18 22:29",
+    "close": 103.8189,
+    "chg_pct": 0.0,
+    "as_of": "11-18 23:30",
     "market": "OTHER",
     "signal": "neutral"
    },
    {
     "code": "GC00Y",
-    "name": "COMEX黄金",
-    "close": 3779.3,
-    "chg_pct": -2.2,
-    "as_of": "11-18 22:20",
+    "name": "纽约黄金",
+    "close": 3760.161,
+    "chg_pct": -2.69,
+    "as_of": "11-18 23:30",
     "market": "OTHER",
     "signal": "risk_off"
    },
    {
     "code": "HG00Y",
-    "name": "COMEX铜",
-    "close": 5.7005,
-    "chg_pct": -4.77,
-    "as_of": "11-18 22:20",
+    "name": "美铜",
+    "close": 573.261,
+    "chg_pct": -5.7,
+    "as_of": "11-18 23:30",
     "market": "OTHER",
     "signal": "risk_off"
    },
    {
-    "code": "FTSE",
-    "name": "英国富时100",
-    "close": 10623.75,
-    "chg_pct": -0.62,
-    "as_of": "11-18 22:30",
-    "market": "EU",
-    "signal": "risk_off"
-   },
-   {
-    "code": "N225",
-    "name": "日经225",
-    "close": 59024.28,
-    "chg_pct": 0.28,
-    "as_of": "11-18 14:30",
-    "market": "JP",
-    "signal": "neutral"
-   },
-   {
-    "code": "BDI",
-    "name": "波罗的海BDI指数",
-    "close": 2914.0,
-    "chg_pct": 0.73,
-    "as_of": "11-18 12:56",
+    "code": "CL00Y",
+    "name": "纽约原油",
+    "close": 83.099,
+    "chg_pct": -1.83,
+    "as_of": "11-18 23:30",
     "market": "OTHER",
-    "signal": "risk_on"
+    "signal": "risk_off"
    }
   ],
   "overseas_signal": {
-   "score": 39.0,
+   "score": 47.1,
    "label": "外盘中性",
-   "text": "外盘中性（盘中）（美股均值-1.14%、恒指-0.91%）（数据时间 2026-11-18 09:30 美东，美股仍在交易）"
+   "text": "外盘中性（盘中）（美股均值-0.26%、恒指-0.91%）（数据时间 2026-11-18 10:30 美东，美股仍在交易）"
   },
   "us_session": {
    "session": "open",
    "label": "美股盘中",
-   "ny_time": "2026-11-18 09:30",
+   "ny_time": "2026-11-18 10:30",
    "is_live": true
   },
   "calendar": [
@@ -990,7 +965,7 @@
     "note": "09:30"
    }
   ],
-  "summary": "国内宏观偏暖，CPI 同比0.7%、PPI 同比5.7%、制造业 PMI49.3、M2 同比7.1%；外盘中性（盘中）（美股均值-1.14%、恒指-0.91%）（数据时间 2026-11-18 09:30 美东，美股仍在交易）。"
+  "summary": "外盘中性（盘中）（美股均值-0.26%、恒指-0.91%）（数据时间 2026-11-18 10:30 美东，美股仍在交易）"
  },
  "national_team": {
   "score": 52.9,
@@ -1051,9 +1026,9 @@
     "basis": "live",
     "session_progress": 1.0,
     "chg_pct": 0.4,
-    "turnover": 3.9,
+    "turnover": 3.79,
     "price": 4.058,
-    "vol_ratio": 1.33
+    "vol_ratio": 0.0
    },
    {
     "code": "510050",
@@ -1067,7 +1042,7 @@
     "chg_pct": -0.03,
     "turnover": 4.44,
     "price": 2.883,
-    "vol_ratio": 1.08
+    "vol_ratio": 0.0
    },
    {
     "code": "510500",
@@ -1079,9 +1054,9 @@
     "basis": "live",
     "session_progress": 1.0,
     "chg_pct": -0.13,
-    "turnover": 3.73,
+    "turnover": 3.75,
     "price": 6.309,
-    "vol_ratio": 0.6
+    "vol_ratio": 0.0
    },
    {
     "code": "159919",
@@ -1095,7 +1070,7 @@
     "chg_pct": 0.31,
     "turnover": 1.73,
     "price": 4.235,
-    "vol_ratio": 0.59
+    "vol_ratio": 0.0
    },
    {
     "code": "512100",
@@ -1107,9 +1082,9 @@
     "basis": "live",
     "session_progress": 1.0,
     "chg_pct": -0.4,
-    "turnover": 10.98,
+    "turnover": 10.71,
     "price": 2.463,
-    "vol_ratio": 1.04
+    "vol_ratio": 0.0
    },
    {
     "code": "588000",
@@ -1121,9 +1096,9 @@
     "basis": "live",
     "session_progress": 1.0,
     "chg_pct": 2.16,
-    "turnover": 6.94,
+    "turnover": 6.96,
     "price": 1.322,
-    "vol_ratio": 0.88
+    "vol_ratio": 0.0
    },
    {
     "code": "159915",
@@ -1137,7 +1112,7 @@
     "chg_pct": 0.78,
     "turnover": 12.74,
     "price": 2.328,
-    "vol_ratio": 1.28
+    "vol_ratio": 0.0
    }
   ],
   "holdings": [
@@ -1272,7 +1247,7 @@
     "state": "不变"
    }
   ],
-  "summary": "6项指纹正向命中1项；命中：权重股抗跌；宽基ETF量比0.91/0.72/0.43倍；主力净额-34.1亿；汇金/证金加仓0/13；大小盘差+0.83pct；金融权重板块净额-52.7亿。未见明确护盘指纹，判定国家队未显著入场（52.9分/中性）。"
+  "summary": "6项指纹正向命中1项；命中：权重股抗跌；宽基ETF量比0.91/0.72/0.43倍；主力净额-34.1亿；汇金/证金加仓0/13；大小盘差+0.83pct。未见明确护盘指纹，判定国家队未显著入场（52.9分/中性）。"
  },
  "focus_etf": {
   "code": "588170",
@@ -2344,8 +2319,8 @@
     "price": 1.322,
     "chg_pct": 2.16,
     "amount_yi": 94.12,
-    "turnover": 6.94,
-    "vol_ratio": 0.88,
+    "turnover": 6.96,
+    "vol_ratio": null,
     "rs_pct": 0.56
    },
    {
@@ -2354,8 +2329,8 @@
     "price": 0.842,
     "chg_pct": 2.43,
     "amount_yi": 33.8,
-    "turnover": 9.57,
-    "vol_ratio": 0.95,
+    "turnover": 9.53,
+    "vol_ratio": null,
     "rs_pct": 0.83
    },
    {
@@ -2364,8 +2339,8 @@
     "price": 0.771,
     "chg_pct": 1.58,
     "amount_yi": 11.24,
-    "turnover": 6.86,
-    "vol_ratio": 0.88,
+    "turnover": 6.91,
+    "vol_ratio": null,
     "rs_pct": -0.02
    },
    {
@@ -2374,8 +2349,8 @@
     "price": 0.83,
     "chg_pct": 1.84,
     "amount_yi": 4.27,
-    "turnover": 5.09,
-    "vol_ratio": 1.06,
+    "turnover": 5.13,
+    "vol_ratio": null,
     "rs_pct": 0.24
    },
    {
@@ -2384,8 +2359,8 @@
     "price": 0.723,
     "chg_pct": 1.69,
     "amount_yi": 18.7,
-    "turnover": 19.84,
-    "vol_ratio": 1.01,
+    "turnover": 19.53,
+    "vol_ratio": null,
     "rs_pct": 0.09
    },
    {
@@ -2395,7 +2370,7 @@
     "chg_pct": 1.32,
     "amount_yi": 2.37,
     "turnover": 4.72,
-    "vol_ratio": 0.77,
+    "vol_ratio": null,
     "rs_pct": -0.28
    }
   ],
@@ -2456,9 +2431,9 @@
    },
    {
     "name": "板块资金",
-    "value": "半导体板块净流入 +184.2 亿",
-    "bull": true,
-    "text": "半导体相关板块主力合计+184.2亿（电子+99.8亿、半导体+45.5亿、数字芯片设计+19.6亿）"
+    "value": "—",
+    "bull": false,
+    "text": "板块资金数据缺失（数据缺失）"
    }
   ],
   "verdict": {
@@ -2478,15 +2453,15 @@
    "name": "科创50",
    "close": 1247.99,
    "chg_pct": 2.19,
-   "chg": 26.8,
+   "chg": 0.0,
    "amount_yi": 907.5,
    "vol": 9276698.0,
    "high": 1263.5,
    "low": 1213.76,
    "open": 1238.62,
    "pre_close": 1221.19,
-   "up": 25,
-   "down": 25,
+   "up": 0,
+   "down": 0,
    "flat": 0
   },
   "kline": [
@@ -6119,7 +6094,7 @@
   },
   "scenarios": [
    {
-    "prob": 0.28,
+    "prob": 0.31,
     "title": "高开冲高",
     "desc": "高开约 3.0%（0.718~0.73），先看能否放量站上压力位 0.700（MA20/布林中轨）；站上则下一压力看 0.712，若冲高回落到 0.681 下方就是诱多",
     "action": "不追高：等回踩 0.688~0.700 企稳再按 200 份挂单；若直接放量突破 0.700 并回踩不破，可小仓跟随（不超过计划份数）"
@@ -6131,7 +6106,7 @@
     "action": "回踩 0.670~0.681 分时企稳可按预案买 200 份（约 139 元）；跌破 0.616 取消并止损"
    },
    {
-    "prob": 0.34,
+    "prob": 0.31,
     "title": "低开探底",
     "desc": "低开约 3.0%（0.664~0.676），开盘就在支撑 0.681 下方，先看 0.670 与 MA5 0.695 能否止跌；跌破进场区下沿 0.688 说明反弹失败",
     "action": "急跌不接：等分时止跌收回 0.688 上方再买 200 份；跌破 0.616 无条件止损，跌到 0.670 下方暂停计划"
@@ -6141,215 +6116,13 @@
  "yaogu": {
   "model_version": "1.0",
   "stats": {
-   "scanned": 5565,
-   "flagged": 8,
-   "reported": 8,
-   "high_count": 3
+   "scanned": 5577,
+   "flagged": 0,
+   "reported": 0,
+   "high_count": 0
   },
-  "list": [
-   {
-    "code": "000707",
-    "name": "双环科技",
-    "chg_pct": 10.02,
-    "price": 5.05,
-    "amount_yi": 4.07,
-    "vol_ratio": 7.36,
-    "turnover": 14.94,
-    "limit_streak": 2,
-    "prob": 0.9197,
-    "level": "高",
-    "industry": "化学原料",
-    "float_cap_yi": 27.81,
-    "reasons": [
-     "量比7.4倍远超阈值2.5，资金有备而来",
-     "今日成交额为前5日均值的21.8倍；近5日量能斜率向上（日均+74%）；近3日有3日显著放量；近3日累计涨幅+20.8%",
-     "已2连板（当日涨停池）",
-     "流通市值28亿（20~80亿最优区间），少量资金即可拉动",
-     "换手14.9%超过阈值12%"
-    ],
-    "concepts": [
-     "小盘股",
-     "游资关注"
-    ]
-   },
-   {
-    "code": "301391",
-    "name": "卡莱特",
-    "chg_pct": 20.01,
-    "price": 46.66,
-    "amount_yi": 3.95,
-    "vol_ratio": 4.17,
-    "turnover": 10.15,
-    "limit_streak": 2,
-    "prob": 0.8234,
-    "level": "高",
-    "industry": "计算机设备",
-    "float_cap_yi": 43.32,
-    "reasons": [
-     "量比4.2倍远超阈值2.5，资金有备而来",
-     "今日成交额为前5日均值的6.9倍；近5日量能斜率向上（日均+59%）；近3日有2日显著放量；近3日涨幅加速（-4.5%→+20.0%→+20.0%）",
-     "已2连板（当日涨停池）",
-     "流通市值43亿（20~80亿最优区间），少量资金即可拉动",
-     "无基本面支撑（PE 2701 极端高估）且跑赢行业「计算机设备」均值20.5pct，孤立异动"
-    ],
-    "concepts": [
-     "创业板20cm",
-     "小盘股"
-    ]
-   },
-   {
-    "code": "002148",
-    "name": "北纬科技",
-    "chg_pct": 9.99,
-    "price": 8.92,
-    "amount_yi": 16.76,
-    "vol_ratio": 1.58,
-    "turnover": 42.02,
-    "limit_streak": 1,
-    "prob": 0.732,
-    "level": "高",
-    "industry": "通信服务",
-    "float_cap_yi": 40.23,
-    "reasons": [
-     "换手42.0%极高（阈值25%）",
-     "今日成交额为前5日均值的5.0倍；近3日有3日显著放量",
-     "流通市值40亿（20~80亿最优区间），少量资金即可拉动",
-     "涨停换手42.0%（巨量换手，接力博弈激烈）",
-     "无基本面支撑（PE 632 极端高估）且跑赢行业「通信服务」均值7.2pct，孤立异动"
-    ],
-    "concepts": [
-     "小盘股",
-     "通信服务主线",
-     "游资关注"
-    ]
-   },
-   {
-    "code": "002843",
-    "name": "泰嘉股份",
-    "chg_pct": 10.03,
-    "price": 17.34,
-    "amount_yi": 11.16,
-    "vol_ratio": 2.09,
-    "turnover": 27.57,
-    "limit_streak": 2,
-    "prob": 0.6326,
-    "level": "中",
-    "industry": "通用设备",
-    "float_cap_yi": 43.42,
-    "reasons": [
-     "换手27.6%极高（阈值25%）",
-     "今日成交额为前5日均值的4.4倍；近3日有3日显著放量；近3日涨幅加速（-4.5%→+10.0%→+10.0%）",
-     "已2连板（当日涨停池）",
-     "流通市值43亿（20~80亿最优区间），少量资金即可拉动",
-     "涨停换手27.6%（巨量换手，接力博弈激烈）"
-    ],
-    "concepts": [
-     "小盘股",
-     "通用设备主线"
-    ]
-   },
-   {
-    "code": "300991",
-    "name": "创益通",
-    "chg_pct": 20.0,
-    "price": 22.68,
-    "amount_yi": 1.67,
-    "vol_ratio": 2.92,
-    "turnover": 7.33,
-    "limit_streak": 1,
-    "prob": 0.5757,
-    "level": "中",
-    "industry": "其他电子Ⅱ",
-    "float_cap_yi": 23.84,
-    "reasons": [
-     "量比2.9倍超过阈值2.5，显著放量",
-     "流通市值24亿（20~80亿最优区间），少量资金即可拉动",
-     "无基本面支撑（PE -83 亏损）且跑赢行业「其他电子Ⅱ」均值19.8pct，孤立异动",
-     "龙虎榜净买入0.2亿（11-18，占成交60%，游资进场）",
-     "量价齐升：量比2.9、涨幅20.0%"
-    ],
-    "concepts": [
-     "创业板20cm",
-     "小盘股",
-     "游资关注"
-    ]
-   },
-   {
-    "code": "300786",
-    "name": "国林科技",
-    "chg_pct": -5.22,
-    "price": 12.7,
-    "amount_yi": 6.57,
-    "vol_ratio": 4.32,
-    "turnover": 33.21,
-    "limit_streak": 0,
-    "prob": 0.5266,
-    "level": "低",
-    "industry": "环保设备Ⅱ",
-    "float_cap_yi": 18.63,
-    "reasons": [
-     "量比4.3倍远超阈值2.5，资金有备而来",
-     "换手33.2%极高（阈值25%）",
-     "放量下跌：换手33.2%、跌幅5.2%（出货嫌疑）",
-     "流通市值19亿，盘子很小易被资金操控",
-     "估值无支撑（PE -64 亏损），纯情绪标的"
-    ],
-    "concepts": [
-     "创业板20cm",
-     "小盘股"
-    ]
-   },
-   {
-    "code": "600202",
-    "name": "哈空调",
-    "chg_pct": 1.97,
-    "price": 5.7,
-    "amount_yi": 6.31,
-    "vol_ratio": 3.29,
-    "turnover": 28.35,
-    "limit_streak": 0,
-    "prob": 0.5167,
-    "level": "低",
-    "industry": "通用设备",
-    "float_cap_yi": 21.85,
-    "reasons": [
-     "换手28.4%但涨幅仅2.0%（放量滞涨，资金对倒/换庄嫌疑）",
-     "换手28.4%极高（阈值25%）",
-     "量比3.3倍超过阈值2.5，显著放量",
-     "流通市值22亿（20~80亿最优区间），少量资金即可拉动",
-     "估值无支撑（PE -87 亏损），纯情绪标的"
-    ],
-    "concepts": [
-     "小盘股",
-     "通用设备主线"
-    ]
-   },
-   {
-    "code": "002584",
-    "name": "西陇科学",
-    "chg_pct": -1.01,
-    "price": 7.83,
-    "amount_yi": 14.4,
-    "vol_ratio": 6.39,
-    "turnover": 36.25,
-    "limit_streak": 0,
-    "prob": 0.5104,
-    "level": "低",
-    "industry": "电子化学品Ⅱ",
-    "float_cap_yi": 37.67,
-    "reasons": [
-     "量比6.4倍远超阈值2.5，资金有备而来",
-     "换手36.2%极高（阈值25%）",
-     "放量下跌：换手36.2%、跌幅1.0%（出货嫌疑）",
-     "今日成交额为前5日均值的8.8倍；近5日量能斜率向上（日均+57%）；近3日有3日显著放量",
-     "流通市值38亿（20~80亿最优区间），少量资金即可拉动"
-    ],
-    "concepts": [
-     "小盘股"
-    ]
-   }
-  ],
-  "summary": "数据截至11-18：涨停41家、跌停40家，最高4连板；资金集中在「IT服务Ⅱ」（7家涨停）；模型在5565只中识别8只异常放量，其中3只高概率(≥70%)；妖股由情绪与资金博弈驱动，T+1 无法卖出、次日跌停常见，3000 元小资金不建议参与。"
+  "list": [],
+  "summary": "数据截至11-18：涨停41家、跌停40家，最高4连板；资金集中在「IT服务Ⅱ」（7家涨停）；模型扫描5577只，今日暂无明显妖股特征的放量个股；妖股由情绪与资金博弈驱动，T+1 无法卖出、次日跌停常见，3000 元小资金不建议参与。"
  },
  "action_plan": {
   "capital": 3000.0,
@@ -6422,8 +6195,8 @@
   "short_term": {
    "horizon": "3~10个交易日",
    "direction": "震荡偏空",
-   "score": -24.2,
-   "confidence": 0.52,
+   "score": -20.1,
+   "confidence": 0.37,
    "index_zone": {
     "support": 3584.58,
     "center": 3587.83,
@@ -6434,7 +6207,7 @@
      "name": "政权与趋势",
      "weight": 0.25,
      "effect": "-",
-     "text": "政权弱势调整(-31.2)；上证距MA20 -1.7%/MA60 -5.6%、沪深300距MA20 -1.5%/MA60 -7.7%、创业板距MA20 -7.2%/MA60 -22.5%；20日动量均值-6.9%"
+     "text": "政权弱势调整(-34.0)；上证距MA20 -1.7%/MA60 -5.6%、沪深300距MA20 -1.5%/MA60 -7.7%、创业板距MA20 -7.2%/MA60 -22.5%；20日动量均值-6.9%"
     },
     {
      "name": "量价配合",
@@ -6445,20 +6218,20 @@
     {
      "name": "广度与情绪",
      "weight": 0.2,
-     "effect": "-",
-     "text": "涨1310家/跌3853家（上涨占比24.7%）；涨停41家/跌停40家；最高4连板；炸板率46%；早盘封板占比24%（封板质量）（昨日涨停溢价无历史池数据源，用封板质量/连板占比代理）"
+     "effect": "0",
+     "text": "涨停41家/跌停40家；最高4连板；炸板率46%；早盘封板占比24%（封板质量）（昨日涨停溢价无历史池数据源，用封板质量/连板占比代理）"
     },
     {
      "name": "资金与国家队",
      "weight": 0.15,
      "effect": "-",
-     "text": "主力净额-34.1亿；国家队53分（未见动作）；宽基ETF量比0.67倍；板块资金合计+143亿"
+     "text": "主力净额-34.1亿；国家队53分（未见动作）；宽基ETF量比0.67倍"
     },
     {
      "name": "宏观与外部",
      "weight": 0.1,
      "effect": "0",
-     "text": "CPI 同比0.7%；PPI 同比5.7%；制造业 PMI49.3；M2 同比7.1%；外盘中性(39分)；全球risk-off(26分)"
+     "text": "CPI 同比0.7%；PPI 同比5.7%；制造业 PMI49.3；M2 同比7.1%；外盘中性(48分)；全球risk-off(34分)"
     },
     {
      "name": "位置与风险",
@@ -6480,73 +6253,72 @@
     "涨停家数回落到40家以下、炸板率升破50% → 情绪修复假设被证伪"
    ],
    "playbook": "逢反弹减仓，等支撑企稳再考虑，不抄第一根阳线",
-   "summary": "短期震荡偏空（-24分，置信52%）；政权弱势调整(-31.2)；成交额13697亿（全日口径）为5日均量0.87倍/20日0.82倍，缩量上涨，指数平均+0.41%；主力净额-34.1亿；上证关键区间3585~3648。若跌破支撑或量能萎缩，先破'放量反弹延续'这条假设。",
+   "summary": "短期震荡偏空（-20分，置信37%）；政权弱势调整(-34.0)；成交额13697亿（全日口径）为5日均量0.87倍/20日0.82倍，缩量上涨，指数平均+0.41%；涨停41家/跌停40家；上证关键区间3585~3648。若跌破支撑或量能萎缩，先破'放量反弹延续'这条假设。",
    "index_zone_note": "上证收盘3587.83；支撑3584.58（20日低点）、中枢3587.83（现价）、压力3648.40（MA20）；参考：MA20=3648、MA60=3799、20日高点=3698、60日高点=3986、20日低点=3585"
   },
   "medium_term": {
    "horizon": "1~3个月",
-   "direction": "震荡偏多",
-   "score": 21.1,
-   "confidence": 0.5,
+   "direction": "震荡",
+   "score": 10.7,
+   "confidence": 0.46,
    "themes": [
     {
      "name": "AI算力/光模块",
-     "score": 76.8,
+     "score": 63.5,
      "rank": 1,
      "vehicle": [
       "159819",
       "588000"
      ],
-     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+124.2亿；新闻15条；外盘risk-off压制成长、行业新闻偏利好",
-     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+124.2亿；新闻15条；外盘risk-off压制成长、行业新闻偏利好",
+     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻16条；外盘risk-off压制成长、行业新闻偏利好",
+     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻16条；外盘risk-off压制成长、行业新闻偏利好",
      "risk": "对美股 AI 叙事高度敏感，海外资本开支不及预期会快速回撤",
      "horizon": "1~3月",
      "invalidation": "北美云厂商资本开支指引下修 / 光模块龙头订单环比转负 / 纳指单月回撤>10%"
     },
     {
-     "name": "消费电子",
-     "score": 56.8,
-     "rank": 2,
-     "vehicle": [
-      "159819",
-      "588000"
-     ],
-     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+146.2亿；无相关新闻；外盘risk-off压制成长",
-     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+146.2亿；无相关新闻；外盘risk-off压制成长",
-     "risk": "对苹果订单与海外需求敏感；美国科技管制升级会冲击供应链预期",
-     "horizon": "1~3月",
-     "invalidation": "苹果砍单传闻被证实 / 手机出货量连续两季负增长"
-    },
-    {
-     "name": "券商",
-     "score": 55.6,
-     "rank": 3,
-     "vehicle": [
-      "512000"
-     ],
-     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻10条；行业新闻偏利好",
-     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻10条；行业新闻偏利好",
-     "risk": "券商是'行情放大器'，若成交额回落则快速回吐；护盘资金流出券商板块",
-     "horizon": "1~3月",
-     "invalidation": "两市成交额跌回 1.2 万亿以下 / 券商板块资金连续5日净流出"
-    },
-    {
      "name": "半导体设备",
-     "score": 54.6,
-     "rank": 4,
+     "score": 56.5,
+     "rank": 2,
      "vehicle": [
       "588170",
       "588710"
      ],
-     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+19.2亿；新闻10条；外盘risk-off压制成长、PPI连续回升改善中上游利润、行业新闻偏利好",
-     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+19.2亿；新闻10条；外盘risk-off压制成长、PPI连续回升改善中上游利润、行业新闻偏利好",
+     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻10条；外盘risk-off压制成长、PPI连续回升改善中上游利润、行业新闻偏利好",
+     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻10条；外盘risk-off压制成长、PPI连续回升改善中上游利润、行业新闻偏利好",
      "risk": "估值高、波动大（588170 近一年多次单日 ±6%~20%）；晶圆厂资本开支下修会直接杀逻辑",
      "horizon": "1~3月",
      "invalidation": "全球晶圆厂资本开支指引下修 / 设备招标额同比转负 / 板块连续5日资金净流出"
     },
     {
+     "name": "券商",
+     "score": 53.4,
+     "rank": 3,
+     "vehicle": [
+      "512000"
+     ],
+     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻9条；行业新闻偏利好",
+     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻9条；行业新闻偏利好",
+     "risk": "券商是'行情放大器'，若成交额回落则快速回吐；护盘资金流出券商板块",
+     "horizon": "1~3月",
+     "invalidation": "两市成交额跌回 1.2 万亿以下 / 券商板块资金连续5日净流出"
+    },
+    {
+     "name": "有色/资源",
+     "score": 48.3,
+     "rank": 4,
+     "vehicle": [
+      "512400"
+     ],
+     "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻5条；铜-5.01%、PPI连续回升改善中上游利润、行业新闻偏利好",
+     "why_now": "数据不足；板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻5条；铜-5.01%、PPI连续回升改善中上游利润、行业新闻偏利好",
+     "risk": "全球需求（尤其中国地产）若走弱则金属价格承压；周期股波动大",
+     "horizon": "1~3月",
+     "invalidation": "LME 铜库存连续累库 / PPI 重新转负 / 美元指数强势升破 105"
+    },
+    {
      "name": "黄金",
-     "score": 48.5,
+     "score": 48.2,
      "rank": 5,
      "vehicle": [
       "518880"
@@ -6558,7 +6330,7 @@
      "invalidation": "COMEX 金价跌破 3900 美元 / 美元指数升破 105 / 实际利率快速上行"
     }
    ],
-   "focus_implication": "主仓半导体排4/14（均分48）：资金+32亿、数据不足；轮到它需板块资金连续3日净流入+科创50站上MA20（1257，现价1248）+存储价格环比转正；现在可逐步加仓（等回踩更稳）。",
+   "focus_implication": "主仓半导体排2/14（均分48）：数据不足；轮到它需板块资金连续3日净流入+科创50站上MA20（1257，现价1248）+存储价格环比转正；现在可逐步加仓（等回踩更稳）。",
    "drivers": [
     {
      "name": "宏观周期",
@@ -6570,7 +6342,7 @@
      "name": "产业趋势",
      "weight": 0.3,
      "effect": "+",
-     "text": "产业前景前5均分58（50=中性），前3：AI算力/光模块、消费电子、券商"
+     "text": "产业前景前5均分54（50=中性），前3：AI算力/光模块、半导体设备、券商"
     },
     {
      "name": "估值与位置",
@@ -6587,8 +6359,8 @@
     {
      "name": "资金主线",
      "weight": 0.2,
-     "effect": "0",
-     "text": "板块资金流入占比50%（12/24），流入合计+410亿；主力净额-34.1亿；宽基ETF量比0.69倍"
+     "effect": "-",
+     "text": "主力净额-34.1亿；宽基ETF量比0.69倍"
     }
    ],
    "triggers": [
@@ -6601,7 +6373,7 @@
     "AI算力/光模块：北美云厂商资本开支指引下修 / 光模块龙头订单环比转负 / 纳指单月回撤>10%",
     "PMI跌破49 或 PPI重新转负 或 M2同比跌破5% → 宏观周期假设被证伪"
    ],
-   "summary": "中期震荡偏多（+21分，置信50%）；主仓半导体排4/14，可逐步加仓；PMI 49.3；PPI +5.7%且回升；板块资金流入占比50%（12/24），流入合计+410亿；中期主题：AI算力/光模块、消费电子、券商。若PMI跌破49或PPI重新转负，先破'宏观周期向上'这条假设。"
+   "summary": "中期震荡（+11分，置信46%）；主仓半导体排2/14，可逐步加仓；PMI 49.3；PPI +5.7%且回升；主力净额-34.1亿；政策类新闻23条、情绪+0.39；中期主题：AI算力/光模块、半导体设备、券商。若PMI跌破49或PPI重新转负，先破'宏观周期向上'这条假设。"
   },
   "calendar_risks": [
    {
@@ -6640,36 +6412,27 @@
  "global_outlook": {
   "risk_regime": {
    "label": "risk-off",
-   "score": 25.9,
-   "text": "避险情绪升温：美股均值-1.14%、恒指-0.91%、美元指数+0.24%、铜-4.77%、离岸人民币+0.03%、黄金-2.20%（26分）。"
+   "score": 34.4,
+   "text": "避险情绪升温：美股均值-0.14%、恒指-0.91%、美元指数+0.00%、铜-5.01%、离岸人民币+0.02%、黄金-2.47%（34分）。"
   },
   "overseas": [
    {
     "code": "NDX",
-    "name": "纳斯达克",
-    "close": 24328.38,
-    "chg_pct": -0.74,
+    "name": "纳斯达克100",
+    "close": 27035.2244,
+    "chg_pct": 0.12,
     "trend": "震荡",
-    "signal": "risk_off",
-    "note": "单日-0.74%，震荡；美股科技（AI资本开支风向标）（海外无日线源，趋势按单日力度推断）"
-   },
-   {
-    "code": "SPX",
-    "name": "标普500",
-    "close": 7340.53,
-    "chg_pct": -1.03,
-    "trend": "震荡",
-    "signal": "risk_off",
-    "note": "单日-1.03%，震荡；美股宽基（海外无日线源，趋势按单日力度推断）"
+    "signal": "neutral",
+    "note": "单日+0.12%，震荡；美股科技（AI资本开支风向标）（海外无日线源，趋势按单日力度推断）"
    },
    {
     "code": "DJIA",
     "name": "道琼斯",
-    "close": 50759.42,
-    "chg_pct": -1.64,
-    "trend": "走弱",
-    "signal": "risk_off",
-    "note": "单日-1.64%，走弱；美国大盘/传统价值（海外无日线源，趋势按单日力度推断）"
+    "close": 50549.1406,
+    "chg_pct": -0.41,
+    "trend": "震荡",
+    "signal": "neutral",
+    "note": "单日-0.41%，震荡；美国大盘/传统价值（海外无日线源，趋势按单日力度推断）"
    },
    {
     "code": "HSI",
@@ -6683,49 +6446,58 @@
    {
     "code": "UDI",
     "name": "美元指数",
-    "close": 103.81,
-    "chg_pct": 0.24,
+    "close": 103.7797,
+    "chg_pct": 0.0,
     "trend": "震荡",
     "signal": "neutral",
-    "note": "单日+0.24%，震荡；美元指数（走弱利多新兴市场）"
+    "note": "单日+0.00%，震荡；美元指数（走弱利多新兴市场）"
    },
    {
     "code": "USDCNH",
-    "name": "美元兑离岸人民币",
-    "close": 6.6687,
-    "chg_pct": 0.03,
+    "name": "离岸人民币",
+    "close": 6.6684,
+    "chg_pct": 0.02,
     "trend": "人民币偏弱",
     "signal": "neutral",
-    "note": "单日+0.03%，人民币偏弱；人民币汇率（升值利多A股）"
+    "note": "单日+0.02%，人民币偏弱；人民币汇率（升值利多A股）"
    },
    {
     "code": "GC00Y",
-    "name": "COMEX黄金",
-    "close": 3779.3,
-    "chg_pct": -2.2,
+    "name": "纽约黄金",
+    "close": 3768.704,
+    "chg_pct": -2.47,
     "trend": "走弱",
     "signal": "hedge",
-    "note": "单日-2.20%，走弱；避险与降息交易"
+    "note": "单日-2.47%，走弱；避险与降息交易"
    },
    {
     "code": "HG00Y",
-    "name": "COMEX铜",
-    "close": 5.7005,
-    "chg_pct": -4.77,
+    "name": "美铜",
+    "close": 577.414,
+    "chg_pct": -5.01,
     "trend": "走弱",
     "signal": "risk_off",
-    "note": "单日-4.77%，走弱；工业需求/顺周期"
+    "note": "单日-5.01%，走弱；工业需求/顺周期"
+   },
+   {
+    "code": "CL00Y",
+    "name": "纽约原油",
+    "close": 83.684,
+    "chg_pct": -1.14,
+    "trend": "震荡",
+    "signal": "inflation",
+    "note": "单日-1.14%，震荡；通胀与地缘"
    }
   ],
   "news_heat": [
    {
     "category": "AI算力/光模块",
-    "count": 15,
-    "sentiment": 0.8,
+    "count": 16,
+    "sentiment": 0.81,
     "titles": [
+     "美股三大指数涨跌不一 纳指高开0.7% 英伟达业绩展望提振情绪",
      "利好来了！“易中天胜”集体公告 光模块、PCB龙头齐护盘",
-     "11月18日东方财富财经晚报（附新闻联播）",
-     "谷歌押注超高温地热 与初创公司Quaise签下50兆瓦购电协议"
+     "11月18日东方财富财经晚报（附新闻联播）"
     ]
    },
    {
@@ -6740,8 +6512,8 @@
    },
    {
     "category": "券商",
-    "count": 10,
-    "sentiment": 0.6,
+    "count": 9,
+    "sentiment": 0.56,
     "titles": [
      "瑞银宋宇：支持内需更显必要，人民币有望继续走强",
      "瑞银证券宋宇：预计2027年GDP增速维持在4.6%左右，广义财政赤字率有望扩大",
@@ -6807,10 +6579,10 @@
    {
     "rank": 1,
     "sector": "AI算力/光模块",
-    "score": 76.8,
+    "score": 63.5,
     "momentum": null,
-    "fund_flow": 0.812,
-    "news_heat": 0.97,
+    "fund_flow": 0.5,
+    "news_heat": 0.972,
     "momentum_pct": null,
     "momentum_detail": {
      "r20_pct": null,
@@ -6821,11 +6593,11 @@
      "board_name": "算力概念"
     },
     "momentum_source": null,
-    "today_chg": 2.46,
-    "fund_flow_yi": 124.2,
-    "news_count": 15,
+    "today_chg": null,
+    "fund_flow_yi": null,
+    "news_count": 16,
     "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+124.2亿；新闻15条；外盘risk-off压制成长、行业新闻偏利好",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻16条；外盘risk-off压制成长、行业新闻偏利好",
     "risk": "对美股 AI 叙事高度敏感，海外资本开支不及预期会快速回撤",
     "invalidation": "北美云厂商资本开支指引下修 / 光模块龙头订单环比转负 / 纳指单月回撤>10%",
     "horizon": "1~3个月",
@@ -6842,79 +6614,11 @@
    },
    {
     "rank": 2,
-    "sector": "消费电子",
-    "score": 56.8,
-    "momentum": null,
-    "fund_flow": 0.938,
-    "news_heat": 0.15,
-    "momentum_pct": null,
-    "momentum_detail": {
-     "r20_pct": null,
-     "r60_pct": null,
-     "turnover_pct": null,
-     "amount_ratio": null,
-     "board_code": "BK1037",
-     "board_name": "消费电子"
-    },
-    "momentum_source": null,
-    "today_chg": 2.46,
-    "fund_flow_yi": 146.2,
-    "news_count": 0,
-    "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+146.2亿；无相关新闻；外盘risk-off压制成长",
-    "risk": "对苹果订单与海外需求敏感；美国科技管制升级会冲击供应链预期",
-    "invalidation": "苹果砍单传闻被证实 / 手机出货量连续两季负增长",
-    "horizon": "1~3个月",
-    "vehicles": [
-     {
-      "code": "159819",
-      "name": "人工智能ETF易方达"
-     },
-     {
-      "code": "588000",
-      "name": "科创50ETF华夏"
-     }
-    ]
-   },
-   {
-    "rank": 3,
-    "sector": "券商",
-    "score": 55.6,
+    "sector": "半导体设备",
+    "score": 56.5,
     "momentum": null,
     "fund_flow": 0.5,
-    "news_heat": 0.707,
-    "momentum_pct": null,
-    "momentum_detail": {
-     "r20_pct": null,
-     "r60_pct": null,
-     "turnover_pct": null,
-     "amount_ratio": null,
-     "board_code": "BK0473",
-     "board_name": "证券Ⅱ"
-    },
-    "momentum_source": null,
-    "today_chg": null,
-    "fund_flow_yi": null,
-    "news_count": 10,
-    "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻10条；行业新闻偏利好",
-    "risk": "券商是'行情放大器'，若成交额回落则快速回吐；护盘资金流出券商板块",
-    "invalidation": "两市成交额跌回 1.2 万亿以下 / 券商板块资金连续5日净流出",
-    "horizon": "1~3个月",
-    "vehicles": [
-     {
-      "code": "512000",
-      "name": "券商ETF华宝"
-     }
-    ]
-   },
-   {
-    "rank": 4,
-    "sector": "半导体设备",
-    "score": 54.6,
-    "momentum": null,
-    "fund_flow": 0.438,
-    "news_heat": 0.726,
+    "news_heat": 0.697,
     "momentum_pct": null,
     "momentum_detail": {
      "r20_pct": null,
@@ -6925,11 +6629,11 @@
      "board_name": "半导体设备"
     },
     "momentum_source": null,
-    "today_chg": 1.16,
-    "fund_flow_yi": 19.2,
+    "today_chg": null,
+    "fund_flow_yi": null,
     "news_count": 10,
     "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+19.2亿；新闻10条；外盘risk-off压制成长、PPI连续回升改善中上游利润、行业新闻偏利好",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻10条；外盘risk-off压制成长、PPI连续回升改善中上游利润、行业新闻偏利好",
     "risk": "估值高、波动大（588170 近一年多次单日 ±6%~20%）；晶圆厂资本开支下修会直接杀逻辑",
     "invalidation": "全球晶圆厂资本开支指引下修 / 设备招标额同比转负 / 板块连续5日资金净流出",
     "horizon": "1~3个月",
@@ -6945,12 +6649,76 @@
     ]
    },
    {
-    "rank": 5,
-    "sector": "黄金",
-    "score": 48.5,
+    "rank": 3,
+    "sector": "券商",
+    "score": 53.4,
     "momentum": null,
     "fund_flow": 0.5,
-    "news_heat": 0.356,
+    "news_heat": 0.628,
+    "momentum_pct": null,
+    "momentum_detail": {
+     "r20_pct": null,
+     "r60_pct": null,
+     "turnover_pct": null,
+     "amount_ratio": null,
+     "board_code": "BK0473",
+     "board_name": "证券Ⅱ"
+    },
+    "momentum_source": null,
+    "today_chg": null,
+    "fund_flow_yi": null,
+    "news_count": 9,
+    "stage": "数据不足",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻9条；行业新闻偏利好",
+    "risk": "券商是'行情放大器'，若成交额回落则快速回吐；护盘资金流出券商板块",
+    "invalidation": "两市成交额跌回 1.2 万亿以下 / 券商板块资金连续5日净流出",
+    "horizon": "1~3个月",
+    "vehicles": [
+     {
+      "code": "512000",
+      "name": "券商ETF华宝"
+     }
+    ]
+   },
+   {
+    "rank": 4,
+    "sector": "有色/资源",
+    "score": 48.3,
+    "momentum": null,
+    "fund_flow": 0.5,
+    "news_heat": 0.439,
+    "momentum_pct": null,
+    "momentum_detail": {
+     "r20_pct": null,
+     "r60_pct": null,
+     "turnover_pct": null,
+     "amount_ratio": null,
+     "board_code": "BK0478",
+     "board_name": "有色金属"
+    },
+    "momentum_source": null,
+    "today_chg": null,
+    "fund_flow_yi": null,
+    "news_count": 5,
+    "stage": "数据不足",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻5条；铜-5.01%、PPI连续回升改善中上游利润、行业新闻偏利好",
+    "risk": "全球需求（尤其中国地产）若走弱则金属价格承压；周期股波动大",
+    "invalidation": "LME 铜库存连续累库 / PPI 重新转负 / 美元指数强势升破 105",
+    "horizon": "1~3个月",
+    "vehicles": [
+     {
+      "code": "512400",
+      "name": "有色金属ETF南方"
+     }
+    ]
+   },
+   {
+    "rank": 5,
+    "sector": "黄金",
+    "score": 48.2,
+    "momentum": null,
+    "fund_flow": 0.5,
+    "news_heat": 0.347,
     "momentum_pct": null,
     "momentum_detail": {
      "r20_pct": null,
@@ -6978,47 +6746,11 @@
    },
    {
     "rank": 6,
-    "sector": "存储芯片",
-    "score": 47.4,
-    "momentum": null,
-    "fund_flow": 0.688,
-    "news_heat": 0.197,
-    "momentum_pct": null,
-    "momentum_detail": {
-     "r20_pct": null,
-     "r60_pct": null,
-     "turnover_pct": null,
-     "amount_ratio": null,
-     "board_code": "BK1137",
-     "board_name": "存储芯片"
-    },
-    "momentum_source": null,
-    "today_chg": -0.23,
-    "fund_flow_yi": 65.1,
-    "news_count": 1,
-    "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+65.1亿；新闻1条；外盘risk-off压制成长",
-    "risk": "存储是强周期品，涨价一旦证伪回撤极快；三星/海力士扩产可能提前终结周期",
-    "invalidation": "DRAM 现货价连续两月下跌 / 海外存储大厂宣布大规模扩产",
-    "horizon": "1~3个月",
-    "vehicles": [
-     {
-      "code": "512760",
-      "name": "芯片ETF国泰"
-     },
-     {
-      "code": "512480",
-      "name": "半导体ETF国联安"
-     }
-    ]
-   },
-   {
-    "rank": 7,
     "sector": "新能源车",
-    "score": 46.7,
+    "score": 46.5,
     "momentum": null,
     "fund_flow": 0.5,
-    "news_heat": 0.393,
+    "news_heat": 0.387,
     "momentum_pct": null,
     "momentum_detail": {
      "r20_pct": null,
@@ -7049,48 +6781,48 @@
     ]
    },
    {
-    "rank": 8,
-    "sector": "半导体材料",
-    "score": 42.4,
+    "rank": 7,
+    "sector": "电力设备",
+    "score": 42.8,
     "momentum": null,
-    "fund_flow": 0.562,
-    "news_heat": 0.15,
+    "fund_flow": 0.5,
+    "news_heat": 0.237,
     "momentum_pct": null,
     "momentum_detail": {
      "r20_pct": null,
      "r60_pct": null,
      "turnover_pct": null,
      "amount_ratio": null,
-     "board_code": "BK1325",
-     "board_name": "半导体材料"
+     "board_code": "BK1200",
+     "board_name": "电力设备"
     },
     "momentum_source": null,
-    "today_chg": 0.11,
-    "fund_flow_yi": 45.5,
-    "news_count": 0,
+    "today_chg": null,
+    "fund_flow_yi": null,
+    "news_count": 2,
     "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金+45.5亿；无相关新闻；外盘risk-off压制成长、PPI连续回升改善中上游利润",
-    "risk": "下游晶圆厂稼动率若下滑则需求走弱；材料价格弹性大、业绩波动大",
-    "invalidation": "12 英寸硅片/电子特气价格连续两月下跌 / 下游稼动率跌破 75%",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻2条；PPI连续回升改善中上游利润",
+    "risk": "光伏产能出清慢、价格战反复；反内卷政策落地不及预期",
+    "invalidation": "组件价格重新跌破现金成本 / 电网招标额同比转负",
     "horizon": "1~3个月",
     "vehicles": [
      {
-      "code": "588170",
-      "name": "科创半导体ETF华夏"
+      "code": "515790",
+      "name": "光伏ETF华泰柏瑞"
      },
      {
-      "code": "588710",
-      "name": "科创半导体设备ETF华泰柏瑞"
+      "code": "516160",
+      "name": "新能源ETF南方"
      }
     ]
    },
    {
-    "rank": 9,
+    "rank": 8,
     "sector": "创新药",
-    "score": 40.2,
+    "score": 40.1,
     "momentum": null,
     "fund_flow": 0.5,
-    "news_heat": 0.197,
+    "news_heat": 0.194,
     "momentum_pct": null,
     "momentum_detail": {
      "r20_pct": null,
@@ -7117,7 +6849,7 @@
     ]
    },
    {
-    "rank": 10,
+    "rank": 9,
     "sector": "固态电池",
     "score": 40.0,
     "momentum": null,
@@ -7149,7 +6881,79 @@
     ]
    },
    {
+    "rank": 10,
+    "sector": "半导体材料",
+    "score": 39.7,
+    "momentum": null,
+    "fund_flow": 0.5,
+    "news_heat": 0.15,
+    "momentum_pct": null,
+    "momentum_detail": {
+     "r20_pct": null,
+     "r60_pct": null,
+     "turnover_pct": null,
+     "amount_ratio": null,
+     "board_code": "BK1325",
+     "board_name": "半导体材料"
+    },
+    "momentum_source": null,
+    "today_chg": null,
+    "fund_flow_yi": null,
+    "news_count": 0,
+    "stage": "数据不足",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；无相关新闻；外盘risk-off压制成长、PPI连续回升改善中上游利润",
+    "risk": "下游晶圆厂稼动率若下滑则需求走弱；材料价格弹性大、业绩波动大",
+    "invalidation": "12 英寸硅片/电子特气价格连续两月下跌 / 下游稼动率跌破 75%",
+    "horizon": "1~3个月",
+    "vehicles": [
+     {
+      "code": "588170",
+      "name": "科创半导体ETF华夏"
+     },
+     {
+      "code": "588710",
+      "name": "科创半导体设备ETF华泰柏瑞"
+     }
+    ]
+   },
+   {
     "rank": 11,
+    "sector": "存储芯片",
+    "score": 39.3,
+    "momentum": null,
+    "fund_flow": 0.5,
+    "news_heat": 0.194,
+    "momentum_pct": null,
+    "momentum_detail": {
+     "r20_pct": null,
+     "r60_pct": null,
+     "turnover_pct": null,
+     "amount_ratio": null,
+     "board_code": "BK1137",
+     "board_name": "存储芯片"
+    },
+    "momentum_source": null,
+    "today_chg": null,
+    "fund_flow_yi": null,
+    "news_count": 1,
+    "stage": "数据不足",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；新闻1条；外盘risk-off压制成长",
+    "risk": "存储是强周期品，涨价一旦证伪回撤极快；三星/海力士扩产可能提前终结周期",
+    "invalidation": "DRAM 现货价连续两月下跌 / 海外存储大厂宣布大规模扩产",
+    "horizon": "1~3个月",
+    "vehicles": [
+     {
+      "code": "512760",
+      "name": "芯片ETF国泰"
+     },
+     {
+      "code": "512480",
+      "name": "半导体ETF国联安"
+     }
+    ]
+   },
+   {
+    "rank": 12,
     "sector": "机器人/减速器",
     "score": 38.0,
     "momentum": null,
@@ -7181,11 +6985,11 @@
     ]
    },
    {
-    "rank": 12,
+    "rank": 13,
     "sector": "军工/商业航天",
-    "score": 30.0,
+    "score": 38.0,
     "momentum": null,
-    "fund_flow": 0.312,
+    "fund_flow": 0.5,
     "news_heat": 0.15,
     "momentum_pct": null,
     "momentum_detail": {
@@ -7197,11 +7001,11 @@
      "board_name": "国防军工"
     },
     "momentum_source": null,
-    "today_chg": -2.09,
-    "fund_flow_yi": -15.3,
+    "today_chg": null,
+    "fund_flow_yi": null,
     "news_count": 0,
     "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金-15.3亿；无相关新闻；外盘risk-off压制成长",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；无相关新闻；外盘risk-off压制成长",
     "risk": "订单节奏与政策强相关、信息不透明；波动大，普通人难跟踪",
     "invalidation": "卫星发射/订单公告连续落空 / 军工板块成交额萎缩至均量 60% 以下",
     "horizon": "1~3个月",
@@ -7213,70 +7017,38 @@
     ]
    },
    {
-    "rank": 13,
-    "sector": "有色/资源",
-    "score": 29.9,
-    "momentum": null,
-    "fund_flow": 0.062,
-    "news_heat": 0.454,
-    "momentum_pct": null,
-    "momentum_detail": {
-     "r20_pct": null,
-     "r60_pct": null,
-     "turnover_pct": null,
-     "amount_ratio": null,
-     "board_code": "BK0478",
-     "board_name": "有色金属"
-    },
-    "momentum_source": null,
-    "today_chg": -1.89,
-    "fund_flow_yi": -62.7,
-    "news_count": 5,
-    "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金-62.7亿；新闻5条；铜-4.77%、PPI连续回升改善中上游利润、行业新闻偏利好",
-    "risk": "全球需求（尤其中国地产）若走弱则金属价格承压；周期股波动大",
-    "invalidation": "LME 铜库存连续累库 / PPI 重新转负 / 美元指数强势升破 105",
-    "horizon": "1~3个月",
-    "vehicles": [
-     {
-      "code": "512400",
-      "name": "有色金属ETF南方"
-     }
-    ]
-   },
-   {
     "rank": 14,
-    "sector": "电力设备",
-    "score": 29.6,
+    "sector": "消费电子",
+    "score": 38.0,
     "momentum": null,
-    "fund_flow": 0.188,
-    "news_heat": 0.243,
+    "fund_flow": 0.5,
+    "news_heat": 0.15,
     "momentum_pct": null,
     "momentum_detail": {
      "r20_pct": null,
      "r60_pct": null,
      "turnover_pct": null,
      "amount_ratio": null,
-     "board_code": "BK1200",
-     "board_name": "电力设备"
+     "board_code": "BK1037",
+     "board_name": "消费电子"
     },
     "momentum_source": null,
-    "today_chg": -1.48,
-    "fund_flow_yi": -16.6,
-    "news_count": 2,
+    "today_chg": null,
+    "fund_flow_yi": null,
+    "news_count": 0,
     "stage": "数据不足",
-    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金-16.6亿；新闻2条；PPI连续回升改善中上游利润",
-    "risk": "光伏产能出清慢、价格战反复；反内卷政策落地不及预期",
-    "invalidation": "组件价格重新跌破现金成本 / 电网招标额同比转负",
+    "logic": "板块日线缺失：momentum=None，30%动量权重已按比例分给资金/新闻/宏观（该源数据缺失）；板块资金未匹配（该源数据缺失）；无相关新闻；外盘risk-off压制成长",
+    "risk": "对苹果订单与海外需求敏感；美国科技管制升级会冲击供应链预期",
+    "invalidation": "苹果砍单传闻被证实 / 手机出货量连续两季负增长",
     "horizon": "1~3个月",
     "vehicles": [
      {
-      "code": "515790",
-      "name": "光伏ETF华泰柏瑞"
+      "code": "159819",
+      "name": "人工智能ETF易方达"
      },
      {
-      "code": "516160",
-      "name": "新能源ETF南方"
+      "code": "588000",
+      "name": "科创50ETF华夏"
      }
     ]
    }
@@ -7307,7 +7079,7 @@
     "sample": "日本连续第6个月出现贸易逆差"
    }
   ],
-  "summary": "全球risk-off（纳指-0.74%、恒指-0.91%、美元指数+0.24%、黄金-2.20%、铜-4.77%）；排序前3：AI算力/光模块、消费电子、券商。地缘主线：美联储货币政策·偏鹰（加息/鹰派→压制成长估值）。未来1~3个月相对看好AI算力/光模块、消费电子、券商；主因：AI算力/光模块（资金+124亿、新闻15条）、消费电子（资金+146亿）；最怕：北美云厂商资本开支指引下修 / 光模块龙头订单环比转负 / 纳指单月回撤>10%。",
+  "summary": "全球risk-off（纳指+0.12%、恒指-0.91%、美元指数+0.00%、黄金-2.47%、铜-5.01%）；排序前3：AI算力/光模块、半导体设备、券商。地缘主线：美联储货币政策·偏鹰（加息/鹰派→压制成长估值）。未来1~3个月相对看好AI算力/光模块、半导体设备、券商；主因：AI算力/光模块（新闻16条）、半导体设备（新闻10条）；最怕：北美云厂商资本开支指引下修 / 光模块龙头订单环比转负 / 纳指单月回撤>10%。",
   "data_notes": [
    "板块动量用东财真实板块日线（90.BKxxxx）：20日/60日涨幅分位 + 今日换手分位 + 今日成交额/20日均额分位，盘中额按 session 进度折算",
    "某方向没有板块日线时 momentum=None，并把动量 30% 权重按比例分给资金/新闻/宏观（不拿指数冒充）",
@@ -7343,8 +7115,8 @@
     "name": "五洋自控",
     "price": 5.02,
     "float_cap_yi": 56.04,
-    "seed_score": 57.5,
-    "prob": 0.0431,
+    "seed_score": 56.5,
+    "prob": 0.0356,
     "stage": "潜伏",
     "conditions": [
      {
@@ -7385,7 +7157,7 @@
      {
       "name": "孤立异动",
       "met": false,
-      "value": "较行业均值+2.4pct"
+      "value": "行业未知"
      },
      {
       "name": "游资/大宗痕迹",
@@ -7422,13 +7194,13 @@
     "risk": "尚未启动，可能需要长时间等待，存在『只缩量不启动』的风险；无精确题材支撑，可能只是资金短炒/一日游；小盘股波动大、T+1 无法当日卖出，3000 元本金只观察不参与"
    },
    {
-    "code": "002771",
-    "name": "真视通",
-    "price": 13.07,
-    "float_cap_yi": 23.6,
-    "seed_score": 56.3,
-    "prob": 0.0342,
-    "stage": "加速",
+    "code": "300093",
+    "name": "金刚光伏",
+    "price": 12.88,
+    "float_cap_yi": 35.94,
+    "seed_score": 55.8,
+    "prob": 0.0311,
+    "stage": "潜伏",
     "conditions": [
      {
       "name": "缩量蓄势",
@@ -7438,17 +7210,17 @@
      {
       "name": "小盘",
       "met": true,
-      "value": "流通市值24亿"
+      "value": "流通市值36亿"
      },
      {
       "name": "低价",
       "met": true,
-      "value": "股价13.07元"
+      "value": "股价12.88元"
      },
      {
       "name": "筹码集中",
       "met": true,
-      "value": "股东户数-9.1%（2026-09-30）"
+      "value": "股东户数-25.3%（2026-09-30）"
      },
      {
       "name": "横盘收敛+初动",
@@ -7467,13 +7239,13 @@
      },
      {
       "name": "孤立异动",
-      "met": true,
-      "value": "较行业均值+9.2pct"
+      "met": false,
+      "value": "行业未知"
      },
      {
       "name": "游资/大宗痕迹",
       "met": true,
-      "value": "游资席位4个、大宗0笔"
+      "value": "游资席位0个、大宗1笔"
      },
      {
       "name": "洗盘充分",
@@ -7495,18 +7267,18 @@
     "concept_details": [],
     "limit_genes": {},
     "reasons": [
-     "小盘：流通市值24亿",
-     "筹码集中：股东户数-9.1%（2026-09-30）",
-     "游资/大宗痕迹：游资席位4个、大宗0笔",
-     "低价：股价13.07元"
+     "筹码集中：股东户数-25.3%（2026-09-30）",
+     "小盘：流通市值36亿",
+     "游资/大宗痕迹：游资席位0个、大宗1笔",
+     "低价：股价12.88元"
     ],
-    "trigger": "放量突破 13.46（约+3%）且当日涨幅>5%",
-    "invalidation": "跌破 12.16（约-7%）",
-    "risk": "已连续涨停，属于加速段，追高风险极高，仅作风险提示；无精确题材支撑，可能只是资金短炒/一日游；小盘股波动大、T+1 无法当日卖出，3000 元本金只观察不参与"
+    "trigger": "放量突破 13.27（约+3%）且当日涨幅>5%",
+    "invalidation": "跌破 11.98（约-7%）",
+    "risk": "尚未启动，可能需要长时间等待，存在『只缩量不启动』的风险；无精确题材支撑，可能只是资金短炒/一日游；小盘股波动大、T+1 无法当日卖出，3000 元本金只观察不参与"
    }
   ],
   "stats": {
-   "scanned": 5565,
+   "scanned": 5577,
    "passed": 2,
    "reported": 2
   },
@@ -7528,20 +7300,20 @@
     "rule": "种子只是观察名单，不做内幕判断，不构成买入建议；T+1 无法当日卖出，3000 元本金不建议参与"
    }
   ],
-  "summary": "数据截至11-18收盘：扫描5565只，2只通过先决条件门槛，输出2只种子（潜伏1只、加速1只）。（股东户数按季披露、滞后约1个季度）；这是基于公开可观测特征（小盘低价、筹码集中、缩量横盘、涨停基因、游资席位）的统计概率，不是内幕消息，也不保证兑现；妖股 T+1 无法卖出、可能连续跌停，3000 元本金只观察不参与。"
+  "summary": "数据截至11-18收盘：扫描5577只，2只通过先决条件门槛，输出2只种子（潜伏2只）。种子首位 五洋自控(300420) seed_score 56.5、潜伏阶段，其中2只仍处潜伏（未启动，才有挖掘价值）；这是基于公开可观测特征（小盘低价、筹码集中、缩量横盘、涨停基因、游资席位）的统计概率，不是内幕消息，也不保证兑现；妖股 T+1 无法卖出、可能连续跌停，3000 元本金只观察不参与。"
  },
  "short_term": {
   "can_trade": false,
   "market_temp": {
-   "score": 48.0,
+   "score": 47.3,
    "label": "退潮",
    "cycle": "退潮期：炸板率高、昨日涨停股亏钱，追高就是接盘。下一段看「冰点」——确认信号：跌停减少、涨停回升到30+再看修复；退潮期禁止新开短线仓",
    "limit_up": 41,
    "limit_down": 40,
    "max_streak": 4,
    "broken_rate": 0.463,
-   "yesterday_premium": 0.0588,
-   "up_ratio": 0.247,
+   "yesterday_premium": 11.2338,
+   "up_ratio": 0.0,
    "vol_ratio5": 0.87,
    "parts": [
     {
@@ -7574,24 +7346,24 @@
     },
     {
      "name": "昨日涨停溢价",
-     "value": 0.0588,
+     "value": 11.2338,
      "score": 88.0,
      "weight": 0.15,
-     "text": "昨日涨停股今日平均+5.88%（昨日涨停股今日涨跌均值（stock_kline 样本 16 只））：接力赚钱效应强，打分88"
+     "text": "昨日涨停股今日平均+1123.38%（涨停池连板股今日涨跌均值（代理，偏乐观，8 只））：接力赚钱效应强，打分88"
     },
     {
      "name": "广度与量能",
      "value": {
-      "up_ratio": 0.247,
+      "up_ratio": 0.0,
       "vol_ratio5": 0.87
      },
-     "score": 26.7,
+     "score": 23.8,
      "weight": 0.25,
-     "text": "上涨家数占比25%、成交额为5日均量0.87倍（全日口径）：广度打分14/量能打分40，合成27"
+     "text": "上涨家数占比0%、成交额为5日均量0.87倍（全日口径）：广度打分8/量能打分40，合成24"
     }
    ],
    "data_ok": true,
-   "text": "市场温度48分（退潮）：涨停41家/跌停40家、最高4板、炸板率46%、昨日涨停溢价+5.88%、上涨占比25%、量比0.87倍"
+   "text": "市场温度47分（退潮）：涨停41家/跌停40家、最高4板、炸板率46%、昨日涨停溢价+1123.38%、上涨占比0%、量比0.87倍"
   },
   "suggest_position_pct": 0.0,
   "position_amount": 0.0,
@@ -7599,9 +7371,9 @@
    {
     "name": "市场温度 ≥ 55",
     "met": false,
-    "value": "48分（退潮）",
+    "value": "47分（退潮）",
     "threshold": "≥55",
-    "text": "实际48分（退潮），要求≥55分"
+    "text": "实际47分（退潮），要求≥55分"
    },
    {
     "name": "政权不是熊市/弱势",
@@ -7619,7 +7391,7 @@
    }
   ],
   "check_reasons": [
-   "温度48分不足（需≥55）",
+   "温度47分不足（需≥55）",
    "政权偏弱，不逆势做短线",
    "跌停40家超限（阈值15家）"
   ],
@@ -7672,10 +7444,10 @@
    {
     "window": "收盘后",
     "action": "等信号再评估",
-    "reason": "等这些条件满足再说：跌停家数回到15家以内（现在40家）；政权脱离熊市/弱势（现在弱势调整）；市场温度回到55分以上（现在48分）"
+    "reason": "等这些条件满足再说：跌停家数回到15家以内（现在40家）；政权脱离熊市/弱势（现在弱势调整）；市场温度回到55分以上（现在47分）"
    }
   ],
-  "summary": "现在不适合做短线：市场温度48分（退潮），温度48分不足55；跌停40家超15；政权弱势调整偏弱。此时只做配置仓、不做短线，等温度回到55分以上、跌停家数≤15、政权脱离弱势且涨停家数回到50家以上再试水；方向先看半导体材料/电力设备。",
+  "summary": "现在不适合做短线：市场温度47分（退潮），温度47分不足55；跌停40家超15；政权弱势调整偏弱。此时只做配置仓、不做短线，等温度回到55分以上、跌停家数≤15、政权脱离弱势且涨停家数回到50家以上再试水；方向先看半导体材料/电力设备。",
   "data_quality": "完整",
   "config": {
    "max_position_pct": 0.3,
@@ -7729,7 +7501,7 @@
   "tactical": {
    "weight": 0.0,
    "amount": 0.0,
-   "note": "短线试水仓当前不启用（市场温度48分/退潮，can_trade=False）：金额全部留在现金，等市场温度≥55 且 can_trade=true 再启用"
+   "note": "短线试水仓当前不启用（市场温度47分/退潮，can_trade=False）：金额全部留在现金，等市场温度≥55 且 can_trade=true 再启用"
   },
   "cash": {
    "weight": 0.2606,
@@ -7971,29 +7743,23 @@
   "saved_prediction": {
    "date": "2026-11-18",
    "mode": "evening",
-   "created_at": "2026-11-18T22:33:54",
+   "created_at": "2026-11-18T22:44:11",
    "index_close": 3587.83,
    "index_chg_pct": 0.09,
    "regime": "弱势调整",
-   "regime_score": -31.2,
+   "regime_score": -34.0,
    "short_direction": "震荡偏空",
-   "short_score": -24.2,
-   "short_confidence": 0.52,
-   "medium_direction": "震荡偏多",
-   "medium_score": 21.1,
+   "short_score": -20.1,
+   "short_confidence": 0.37,
+   "medium_direction": "震荡",
+   "medium_score": 10.7,
    "etf_rating": "买入",
    "etf_position_pct": 0.0465,
    "etf_price": 0.697,
-   "yaogu_top": [
-    "000707",
-    "301391",
-    "002148",
-    "002843",
-    "300991"
-   ],
+   "yaogu_top": [],
    "seed_top": [
     "300420",
-    "002771"
+    "300093"
    ],
    "short_term_can_trade": false
   }
@@ -9241,22 +9007,22 @@
    "date": "2026-11-18",
    "regime": "弱势调整",
    "code": "weak",
-   "score": -31.2,
-   "bull_prob": 6.1,
+   "score": -34.0,
+   "bull_prob": 5.5,
    "etf_close": 0.697,
    "etf_chg_pct": 1.6,
    "turnover_yi": 13697.0,
    "limit_up": 41,
    "limit_down": 40,
-   "up_ratio": 0.2474,
+   "up_ratio": 0.0,
    "national_score": 52.9,
-   "yaogu_count": 8,
+   "yaogu_count": 0,
    "position_pct": 0.0465,
    "mode": "evening"
   }
  ],
  "briefs": {
-  "morning": "【短期3~10个交易日】**震荡偏空**（-24分，置信52%）｜【中期1~3个月】**震荡偏多**。【政权】弱势调整（-31分，牛市概率6%）。【全球】risk-off（26分）。【国家队】中性（53分）。【588170】现价0.697（+1.60%），评级买入。【动作】计划09:35-10:15在[0.688, 0.7]区间买入 200 份（约139元，占总资金5%）。【成立】沪指站稳3648（关键压力位）且成交额折算后≥1.66万亿（5日均量1.05倍）；涨停家数≥80家且连板高度≥5板（情绪从修复转发酵）。【失效】收盘跌破3585（关键支撑位）且跌停家数>20 → 第一个破的假设是'放量反弹能延续'；两市成交额萎缩至1.26万亿以下（5日均量0.8倍）→ 增量资金假设被证伪。【怎么做】逢反弹减仓，等支撑企稳再考虑，不抄第一根阳线。【妖股种子·潜伏】五洋自控(4%)。⚠️成本警示：预案金额139元，最低佣金5元使往返成本达7.17%，建议免5账户或单笔≥1500元。",
-  "evening": "【短期3~10个交易日】**震荡偏空**（-24分，置信52%）｜【中期1~3个月】**震荡偏多**。【中期看好】AI算力/光模块、消费电子、券商。【今日】弱势调整，市场上证3587.83点(+0.09%)、深证+0.20%，两市成交13697亿、为【ETF】588170 收 0.697（+1.60%），可以做多，但分批不追高：0.688~0.700 分 1 笔买入 200 份（约 139 元），止损 0.616【妖股】今日扫描5565只，识别8只异常放量。【妖股种子·潜伏】五洋自控(4%)。【短线】不建议（温度退潮，仓位0%）。【明日】可以做多，但分批不追高：0.688~0.700 分 1 笔买入 200 份（约 139 元），止损 0.616"
+  "morning": "【外盘·美股盘中】外盘中性（盘中）（美股均值-0.26%、恒指-0.91%）【短期3~10个交易日】**震荡偏空**（-20分，置信37%）｜【中期1~3个月】**震荡**。【政权】弱势调整（-34分，牛市概率6%）。【全球】risk-off（34分）。【国家队】中性（53分）。【588170】现价0.697（+1.60%），评级买入。【动作】计划09:35-10:15在[0.688, 0.7]区间买入 200 份（约139元，占总资金5%）。【成立】沪指站稳3648（关键压力位）且成交额折算后≥1.66万亿（5日均量1.05倍）；涨停家数≥80家且连板高度≥5板（情绪从修复转发酵）。【失效】收盘跌破3585（关键支撑位）且跌停家数>20 → 第一个破的假设是'放量反弹能延续'；两市成交额萎缩至1.26万亿以下（5日均量0.8倍）→ 增量资金假设被证伪。【怎么做】逢反弹减仓，等支撑企稳再考虑，不抄第一根阳线。【妖股种子·潜伏】五洋自控(4%)、金刚光伏(3%)。⚠️成本警示：预案金额139元，最低佣金5元使往返成本达7.17%，建议免5账户或单笔≥1500元。",
+  "evening": "【外盘·美股盘中】外盘中性（盘中）（美股均值-0.26%、恒指-0.91%）【短期3~10个交易日】**震荡偏空**（-20分，置信37%）｜【中期1~3个月】**震荡**。【中期看好】AI算力/光模块、半导体设备、券商。【今日】弱势调整，市场上证3587.83点(+0.09%)、深证+0.20%、创业板+0.85%、科创【ETF】588170 收 0.697（+1.60%），可以做多，但分批不追高：0.688~0.700 分 1 笔买入 200 份（约 139 元），止损 0.616【妖股】今日扫描5577只，识别0只异常放量。【妖股种子·潜伏】五洋自控(4%)、金刚光伏(3%)。【短线】不建议（温度退潮，仓位0%）。【明日】可以做多，但分批不追高：0.688~0.700 分 1 笔买入 200 份（约 139 元），止损 0.616"
  }
 }
