@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T12:01:38+08:00",
+ "updated_at": "2026-11-20T22:32:59+08:00",
  "records": [
   {
    "date": "2026-09-17",
@@ -511,18 +511,18 @@
    "date": "2026-11-20",
    "regime": "熊市",
    "code": "bear",
-   "score": -47.2,
-   "bull_prob": 3.2,
-   "etf_close": 0.699,
-   "etf_chg_pct": -2.1,
-   "turnover_yi": 8557.7,
+   "score": -37.9,
+   "bull_prob": 4.7,
+   "etf_close": 0.681,
+   "etf_chg_pct": -4.62,
+   "turnover_yi": 14222.0,
    "limit_up": 28,
-   "limit_down": 6,
-   "up_ratio": 0.1219,
-   "national_score": 51.5,
-   "yaogu_count": 14,
+   "limit_down": 58,
+   "up_ratio": 0.0569,
+   "national_score": 80.7,
+   "yaogu_count": 0,
    "position_pct": 0.0,
-   "mode": "morning"
+   "mode": "evening"
   }
  ]
 }
