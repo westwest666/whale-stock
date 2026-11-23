@@ -149,7 +149,7 @@
     "fallback_hits": 4
    }
   },
-  "us_refreshed_at": "2026-11-20T23:30:05"
+  "us_refreshed_at": "2026-11-23T11:59:55"
  },
  "regime": {
   "label": "弱势调整",
@@ -578,86 +578,113 @@
    {
     "code": "DJIA",
     "name": "道琼斯",
-    "close": 49264.3203,
-    "chg_pct": 0.34,
-    "as_of": "11-20 23:30",
+    "close": 48147.33,
+    "chg_pct": -1.93,
+    "as_of": "11-21 04:59",
     "market": "US",
-    "signal": "neutral"
+    "signal": "risk_off"
    },
    {
     "code": "NDX",
-    "name": "纳斯达克100",
-    "close": 25960.0144,
-    "chg_pct": -2.1,
-    "as_of": "11-20 23:30",
+    "name": "纳斯达克",
+    "close": 22617.73,
+    "chg_pct": -5.28,
+    "as_of": "11-21 05:00",
+    "market": "US",
+    "signal": "risk_off"
+   },
+   {
+    "code": "SPX",
+    "name": "标普500",
+    "close": 6910.39,
+    "chg_pct": -3.7,
+    "as_of": "11-21 04:59",
     "market": "US",
     "signal": "risk_off"
    },
    {
     "code": "HSI",
     "name": "恒生指数",
-    "close": 22410.801,
-    "chg_pct": -1.89,
-    "as_of": "11-20 23:30",
+    "close": 22267.31,
+    "chg_pct": -0.64,
+    "as_of": "11-23 11:59",
     "market": "HK",
     "signal": "risk_off"
    },
    {
     "code": "USDCNH",
-    "name": "离岸人民币",
-    "close": 6.6729,
-    "chg_pct": -0.31,
-    "as_of": "11-20 23:30",
+    "name": "美元兑离岸人民币",
+    "close": 6.6766,
+    "chg_pct": 0.02,
+    "as_of": "11-23 11:59",
     "market": "OTHER",
     "signal": "neutral"
    },
    {
     "code": "UDI",
     "name": "美元指数",
-    "close": 103.7334,
-    "chg_pct": 0.0,
-    "as_of": "11-20 23:30",
+    "close": 103.77,
+    "chg_pct": -0.07,
+    "as_of": "11-23 11:59",
     "market": "OTHER",
     "signal": "neutral"
    },
    {
     "code": "GC00Y",
-    "name": "纽约黄金",
-    "close": 3534.92,
-    "chg_pct": -4.09,
-    "as_of": "11-20 23:30",
+    "name": "COMEX黄金",
+    "close": 3605.4,
+    "chg_pct": 2.56,
+    "as_of": "11-23 11:49",
     "market": "OTHER",
-    "signal": "risk_off"
+    "signal": "risk_on"
    },
    {
     "code": "HG00Y",
-    "name": "美铜",
-    "close": 558.685,
-    "chg_pct": -2.37,
-    "as_of": "11-20 23:30",
+    "name": "COMEX铜",
+    "close": 5.532,
+    "chg_pct": 0.86,
+    "as_of": "11-23 11:49",
     "market": "OTHER",
+    "signal": "risk_on"
+   },
+   {
+    "code": "FTSE",
+    "name": "英国富时100",
+    "close": 10346.34,
+    "chg_pct": -1.02,
+    "as_of": "11-21 00:35",
+    "market": "EU",
     "signal": "risk_off"
    },
    {
-    "code": "CL00Y",
-    "name": "纽约原油",
-    "close": 81.59,
-    "chg_pct": -1.03,
-    "as_of": "11-20 23:30",
-    "market": "OTHER",
+    "code": "N225",
+    "name": "日经225",
+    "close": 56436.65,
+    "chg_pct": -5.06,
+    "as_of": "11-20 14:30",
+    "market": "JP",
     "signal": "risk_off"
+   },
+   {
+    "code": "BDI",
+    "name": "波罗的海BDI指数",
+    "close": 2898.0,
+    "chg_pct": -0.1,
+    "as_of": "11-20 12:54",
+    "market": "OTHER",
+    "signal": "neutral"
    }
   ],
   "overseas_signal": {
-   "score": 41.1,
-   "label": "外盘中性",
-   "text": "外盘中性（盘中）（美股均值-0.88%、恒指-1.89%）（数据时间 2026-11-20 10:30 美东，美股仍在交易）"
+   "score": 12.9,
+   "label": "外盘偏空",
+   "text": "外盘偏空（美股均值-3.64%、恒指-0.64%、黄金+2.56%、原油+0.00%），避险升温"
   },
   "us_session": {
-   "session": "open",
-   "label": "美股盘中",
-   "ny_time": "2026-11-20 10:30",
-   "is_live": true
+   "session": "weekend",
+   "label": "美股休市（周末）",
+   "ny_time": "2026-11-22 22:59",
+   "is_live": false
   },
   "calendar": [
    {
@@ -721,7 +748,7 @@
     "note": "09:30"
    }
   ],
-  "summary": "外盘中性（盘中）（美股均值-0.88%、恒指-1.89%）（数据时间 2026-11-20 10:30 美东，美股仍在交易）"
+  "summary": "外盘偏空（美股均值-3.64%、恒指-0.64%、黄金+2.56%、原油+0.00%），避险升温"
  },
  "national_team": {
   "score": 66.7,
