@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T22:43:11+08:00",
+ "updated_at": "2026-11-24T12:14:50+08:00",
  "records": [
   {
    "date": "2026-09-17",
@@ -540,6 +540,23 @@
    "yaogu_count": 4,
    "position_pct": 0.0454,
    "mode": "evening"
+  },
+  {
+   "date": "2026-11-24",
+   "regime": "震荡市",
+   "code": "range",
+   "score": 16.3,
+   "bull_prob": 26.9,
+   "etf_close": 0.703,
+   "etf_chg_pct": 3.23,
+   "turnover_yi": 11209.6,
+   "limit_up": 64,
+   "limit_down": 2,
+   "up_ratio": 0.5389,
+   "national_score": 52.9,
+   "yaogu_count": 6,
+   "position_pct": 0.1406,
+   "mode": "morning"
   }
  ]
 }
